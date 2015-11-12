@@ -1,5 +1,3 @@
-require 'open-uri'
-
 module Adapters 
   class PlayerScraper 
 
@@ -7,18 +5,17 @@ module Adapters
       open(page.uri).read
     end
     def get_players(xml_page)
-      binding.pry
-      xml_doc  = Nokogiri::XML(xml_page).xpath("//game") 
+      Nokogiri::XML(xml_page)
     end
     def update_or_create_players(page)
       player = Player.create
       xml_players = players(page)
-      binding.pry
       xml_page = get_players(xml_players)
-      xml_page.xpath("//inning").each do |inning|
-        Player.find_or_create_by()
+      xml_page.xpath("//player").each do |player|
+        Player.find_or_create_by(player)
       end
     end
 
   end
 end
+

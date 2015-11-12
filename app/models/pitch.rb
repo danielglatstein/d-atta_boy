@@ -13,8 +13,6 @@
 
 class Pitch < ActiveRecord::Base
   belongs_to :at_bat
-  
-  
 
   def inning
     self.atbat.inning

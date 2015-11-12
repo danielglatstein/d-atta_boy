@@ -1,40 +1,74 @@
 module Adapters 
   class PitchScraper
-    def innings
-      open("http://gd2.mlb.com/components/game/mlb/year_2014/month_05/day_18/gid_2014_05_18_pitmlb_nyamlb_1/inning/inning_all.xml").read
-    end
     
-    def get_at_bats
-      xml_doc  = Nokogiri::XML(innings).xpath("//atbat")
-    end
     def get_pitch_hash(pitch, at_bat)
-      pitch_hash = pitch.each_with_object({}) do |att, hash|
-        if att[0] == "type" 
-          hash["result"] = att[1]
-        else
-          hash[att[0].to_sym] = att[1..-1].join("_")
-        end
-        hash[:batter_id] = at_bat.values[6]
-        hash[:pitcher_id] = at_bat.values[9]
-        hash[:at_bat_num] = at_bat.values[0]
-        hash.delete(:id)
-        hash.delete(:event_num)
-      end
+      hash = Hash.new
+      movement_hash = pitch.each_with_object(hash) do |att, hash|
+         case att[0]
+         when "type"
+           hash[type] = att[1]
+         when "pitch_type"
+           hash[pitch_type] = att[1]
+         when "nasty"
+           hash[nasty] = att[1]
+         end
+      end 
     end
-    def update_or_create_pitches
-      get_pitches_data_array.each do |pitch|
-        new_pitch = Pitch.new(pitch)
-        new_pitch.id = pitch[:id]
-        new_pitch.save
-      end
+
+    def get_baserunner_hash(pitch)
+      #baserunner's columns only appear when their is a runner on that base, 
+      #will these automatically be saved as nil? or will it blow up?
+      hash = Hash.new
+      baserunner_hash = pitch.each_with_object(hash) do |att, hash|
+         case att[0]
+         when "on_1b"
+           hash[on_1b] = att[1]
+         when "on_2b"
+           hash[on_2b] = att[1]
+         when "on_3b"
+           hash[on_3b] = att[1]
+         end
+      end 
     end
-    def iterate_through_pages
-      mechanize = Mechanize.new
-      mlb_root = mechanize.get("http://gd2.mlb.com/components/game/mlb/")
-      year_links = ""
-      month_links = ""
-      day_links = ""
-      innings_link = ""
+
+    def get_movement_hash(pitch)
+      hash = Hash.new
+      movement_hash = pitch.each_with_object(hash) do |att, hash|
+         case att[0]
+         when "pfx_x"
+           hash[pfx_x] = att[1]
+         when "pfx_z"
+           hash[pfx_z] = att[1]
+         when "break_angle"
+           hash[break_angle] = att[1]
+         when "break_length"
+           hash[break_length] = att[1]
+         when "spin_rate"
+           hash[spin_rate] = att[1]
+         end
+      end 
     end
+
+    def get_velocity_hash(pitch)
+      hash = Hash.new
+      movement_hash = pitch.each_with_object(hash) do |att, hash|
+         case att[0]
+         when "start_speed"
+           hash[start_speed] = att[1]
+         when "end_speed"
+           hash[end_speed] = att[1]
+         end
+      end 
+    end
+
+    # def update_or_create_pitches(wutang)
+    #   binding.pry
+    #   get_pitches_data_array.each do |pitch|
+    #     new_pitch = Pitch.new(pitch)
+    #     new_pitch.id = pitch[:id]
+    #     new_pitch.save
+    #   end
+    # end
+
   end
 end
