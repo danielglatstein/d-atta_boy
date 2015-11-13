@@ -4,7 +4,7 @@ module Adapters
     def create_at_bats(inning_xml, inning_object)
       pitch_scraper = PitchScraper.new
       inning_xml.children.each do |t_or_b_xml|
-        t_or_b.children.each do |at_bat_xml|
+        t_or_b_xml.children.each do |at_bat_xml|
           at_bat_hash = get_at_bat_hash(at_bat_xml, inning_object)
           at_bat_object = AtBat.create(at_bat_hash)
           at_bat_object.top_or_bottom = t_or_b_xml.name
@@ -17,7 +17,7 @@ module Adapters
     def get_at_bat_hash(at_bat_xml, inning_object)
       hash = Hash.new
       hash[:inning_id] = inning_object.id
-      at_bat_hash = at_bat.each_with_object(hash) do |att, hash|
+      at_bat_hash = at_bat_xml.each_with_object(hash) do |att, hash|
         case att[0]
         when "o"
           hash[:outs] = att[1]

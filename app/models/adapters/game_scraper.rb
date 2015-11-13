@@ -1,5 +1,4 @@
 require 'open-uri'
-
 module Adapters 
   class GameScraper 
     def innings(page)
@@ -15,7 +14,7 @@ module Adapters
       inning_scraper = InningScraper.new
       xml_innings = innings(page)
       xml_page = get_game(xml_innings)
-      inning_scraper.create_innings(game_object, xml_page)
+      inning_scraper.create_innings(xml_page, game_object)
     end
   end
 end

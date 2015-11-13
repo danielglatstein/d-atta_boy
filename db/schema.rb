@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113153457) do
+ActiveRecord::Schema.define(version: 20151113181918) do
 
   create_table "at_bats", force: :cascade do |t|
     t.integer  "inning_id"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20151113153457) do
 
   create_table "pitches", force: :cascade do |t|
     t.integer  "at_bat_id"
-    t.string   "type"
+    t.string   "result"
     t.string   "pitch_type"
     t.integer  "nasty"
     t.datetime "created_at", null: false

@@ -19,8 +19,9 @@ module Adapters
       hash[:at_bat_id] = at_bat_object.id
       pitch_hash = pitch_xml.each_with_object(hash) do |att, hash|
          case att[0]
+          #type is an activerecord keyword, so the column name is changed to "result" instead
          when "type"
-           hash[:type] = att[1]
+           hash[:result] = att[1]
          when "pitch_type"
            hash[:pitch_type] = att[1]
          when "nasty"

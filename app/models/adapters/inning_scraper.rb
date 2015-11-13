@@ -5,7 +5,7 @@ module Adapters
       at_bat_scraper = AtBatScraper.new
       game_xml.xpath("//inning").each do |inning_xml|
         inning_object = Inning.create(get_inning_hash(inning_xml, game_object))
-        game_object.innings << new_inning_object
+        game_object.innings << inning_object
         at_bat_scraper.create_at_bats(inning_xml, inning_object)
       end
     end
