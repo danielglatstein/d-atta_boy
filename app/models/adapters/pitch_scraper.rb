@@ -20,11 +20,11 @@ module Adapters
       pitch_hash = pitch_xml.each_with_object(hash) do |att, hash|
          case att[0]
          when "type"
-           hash[type] = att[1]
+           hash[:type] = att[1]
          when "pitch_type"
-           hash[pitch_type] = att[1]
+           hash[:pitch_type] = att[1]
          when "nasty"
-           hash[nasty] = att[1]
+           hash[:nasty] = att[1]
          end
       end 
     end
@@ -33,9 +33,11 @@ module Adapters
       baserunner_scraper = BaserunnerScraper.new
       movement_scraper = MovementScraper.new
       velocity_scraper = VelocityScraper.new
+      release_point_scraper = ReleasePointScraper.new
       baserunner_scraper.create_baserunner(pitch_xml, pitch_object)
       movement_scraper.create_movement(pitch_xml, pitch_object)
       velocity_scraper.create_velocity(pitch_xml, pitch_object)
+      release_point_scraper.create_release_point(pitch_xml, pitch_object)
     end
   end
 end

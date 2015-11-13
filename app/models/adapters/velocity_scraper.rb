@@ -15,9 +15,9 @@ module Adapters
       velocity_hash = pitch_xml.each_with_object(hash) do |att, hash|
         case att[0]
         when "start_speed"
-          hash[start_speed] = att[1]
+          hash[:start_speed] = att[1]
         when "end_speed"
-          hash[end_speed] = att[1]
+          hash[:end_speed] = att[1]
         end
       end 
     end
