@@ -1,23 +1,23 @@
 module Adapters 
   class PitchScraper
 
-    def create_pitches(at_bat)
-      at_bat.children.each do |pitch|
-        pitch_hash = pitch_scraper.get_pitch_hash(pitch, at_bat)
+    def create_pitches(at_bat_xml, at_bat_object)
+      at_bat_xml.children.each do |pitch_xml|
+        pitch_hash = get_pitch_hash(pitch_xml, at_bat_object)
         begin
-          if pitch_hash[:break_angle]
-            new_pitch_obj = pitch_scraper.update_or_create_pitches(pitch_hash)
-            new_pitch_obj.at_bat_id = new_at_bat_obj.id
-            new_pitch_obj.save
+          if pitch_hash[:nasty]
+            pitch_object = Pitch.create(pitch_hash)
+            create_pitch_children(pitch_xml, pitch_object)
           end
           rescue ActiveRecord::RecordNotUnique
         end
       end
     end
     
-    def get_pitch_hash(pitch, at_bat)
+    def get_pitch_hash(pitch_xml, at_bat_object)
       hash = Hash.new
-      movement_hash = pitch.each_with_object(hash) do |att, hash|
+      hash[:at_bat_id] = at_bat_object.id
+      pitch_hash = pitch_xml.each_with_object(hash) do |att, hash|
          case att[0]
          when "type"
            hash[type] = att[1]
@@ -29,44 +29,13 @@ module Adapters
       end 
     end
 
-    def get_movement_hash(pitch)
-      hash = Hash.new
-      movement_hash = pitch.each_with_object(hash) do |att, hash|
-         case att[0]
-         when "pfx_x"
-           hash[pfx_x] = att[1]
-         when "pfx_z"
-           hash[pfx_z] = att[1]
-         when "break_angle"
-           hash[break_angle] = att[1]
-         when "break_length"
-           hash[break_length] = att[1]
-         when "spin_rate"
-           hash[spin_rate] = att[1]
-         end
-      end 
+    def create_pitch_children(pitch_xml, pitch_object)
+      baserunner_scraper = BaserunnerScraper.new
+      movement_scraper = MovementScraper.new
+      velocity_scraper = VelocityScraper.new
+      baserunner_scraper.create_baserunner(pitch_xml, pitch_object)
+      movement_scraper.create_movement(pitch_xml, pitch_object)
+      velocity_scraper.create_velocity(pitch_xml, pitch_object)
     end
-
-    def get_velocity_hash(pitch)
-      hash = Hash.new
-      movement_hash = pitch.each_with_object(hash) do |att, hash|
-         case att[0]
-         when "start_speed"
-           hash[start_speed] = att[1]
-         when "end_speed"
-           hash[end_speed] = att[1]
-         end
-      end 
-    end
-
-    # def update_or_create_pitches(wutang)
-    #   binding.pry
-    #   get_pitches_data_array.each do |pitch|
-    #     new_pitch = Pitch.new(pitch)
-    #     new_pitch.id = pitch[:id]
-    #     new_pitch.save
-    #   end
-    # end
-
   end
 end

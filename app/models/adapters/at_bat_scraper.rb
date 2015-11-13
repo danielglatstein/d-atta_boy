@@ -1,22 +1,22 @@
 module Adapters 
   class AtBatScraper
 
-    def create_at_bats(inning)
-      inning.children.each do |t_or_b|
-          t_or_b.children.each do |at_bat|
-            at_bat_hash = at_bat_scraper.get_at_bat_hash(at_bat, inning)
-            new_at_bat_obj = AtBat.find_or_create_by(at_bat_hash)
-            new_at_bat_obj.top_or_bottom = t_or_b.name
-            new_inning_obj.at_bats << new_at_bat_obj
-          end
+    def create_at_bats(inning_xml, inning_object)
+      pitch_scraper = PitchScraper.new
+      inning_xml.children.each do |t_or_b_xml|
+        t_or_b.children.each do |at_bat_xml|
+          at_bat_hash = get_at_bat_hash(at_bat_xml, inning_object)
+          at_bat_object = AtBat.create(at_bat_hash)
+          at_bat_object.top_or_bottom = t_or_b_xml.name
+          inning_object.at_bats << at_bat_object
+          pitch_scraper.create_pitches(at_bat_xml, at_bat_object)
         end
       end
     end
     
-    def get_at_bat_hash(at_bat, inning)
+    def get_at_bat_hash(at_bat_xml, inning_object)
       hash = Hash.new
-      # hash[:home_team_runs] = nil
-      # hash[:away_team_runs] = nil
+      hash[:inning_id] = inning_object.id
       at_bat_hash = at_bat.each_with_object(hash) do |att, hash|
         case att[0]
         when "o"

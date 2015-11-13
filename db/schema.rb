@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107222456) do
+ActiveRecord::Schema.define(version: 20151113153457) do
 
   create_table "at_bats", force: :cascade do |t|
     t.integer  "inning_id"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20151107222456) do
 
   create_table "baserunners", force: :cascade do |t|
     t.integer  "pitch_id"
-    t.boolean  "on_1b"
-    t.boolean  "on_2b"
-    t.boolean  "on_3b"
+    t.integer  "on_1b"
+    t.integer  "on_2b"
+    t.integer  "on_3b"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,14 +76,6 @@ ActiveRecord::Schema.define(version: 20151107222456) do
     t.float    "spin_rate"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "pitch_velocities", force: :cascade do |t|
-    t.integer  "pitch_id"
-    t.float    "start_speed"
-    t.float    "end_speed"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "pitches", force: :cascade do |t|
@@ -144,6 +136,14 @@ ActiveRecord::Schema.define(version: 20151107222456) do
     t.string   "abbrev"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "velocities", force: :cascade do |t|
+    t.integer  "pitch_id"
+    t.float    "start_speed"
+    t.float    "end_speed"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

@@ -1,25 +1,20 @@
 module Adapters 
   class BaserunnerScraper
 
-    def create_baserunners(at_bat)
-      at_bat.children.each do |pitch|
-        pitch_hash = pitch_scraper.get_pitch_hash(pitch, at_bat)
-        begin
-          if pitch_hash[:break_angle]
-            new_pitch_obj = pitch_scraper.update_or_create_pitches(pitch_hash)
-            new_pitch_obj.at_bat_id = new_at_bat_obj.id
-            new_pitch_obj.save
-          end
-          rescue ActiveRecord::RecordNotUnique
-        end
+    def create_baserunners(pitch_xml, pitch_object)
+      baserunner_hash = get_baserunner_hash(pitch_xml, pitch_object)
+      begin
+        baserunner_object = Baserunner.create(baserunner_hash)
+        rescue ActiveRecord::RecordNotUnique
       end
     end
     
-    def get_baserunner_hash(pitch)
+    def get_baserunner_hash(pitch_xml, pitch_object)
       #baserunner's columns only appear when their is a runner on that base, 
       #will these automatically be saved as nil? or will it blow up?
       hash = Hash.new
-      baserunner_hash = pitch.each_with_object(hash) do |att, hash|
+      hash[:pitch_id] = pitch_object.id
+      baserunner_hash = pitch_xml.each_with_object(hash) do |att, hash|
          case att[0]
          when "on_1b"
            hash[on_1b] = att[1]

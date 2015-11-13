@@ -11,11 +11,11 @@ module Adapters
     end
 
     def create_games(page)
-      game = Game.create
+      game_object = Game.create
       inning_scraper = InningScraper.new
       xml_innings = innings(page)
       xml_page = get_game(xml_innings)
-      inning_scraper.create_innings(game, xml_page)
+      inning_scraper.create_innings(game_object, xml_page)
     end
   end
 end
