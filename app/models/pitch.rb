@@ -13,6 +13,11 @@
 
 class Pitch < ActiveRecord::Base
   belongs_to :at_bat
+  has_one :baserunner
+  has_one :movement
+  has_one :release_point
+  has_one :strike_zone
+  has_one :velocity
 
   def inning
     self.atbat.inning

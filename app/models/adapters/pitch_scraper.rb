@@ -7,6 +7,7 @@ module Adapters
         begin
           if pitch_hash[:nasty]
             pitch_object = Pitch.create(pitch_hash)
+            at_bat_object.pitches << pitch_object
             create_pitch_children(pitch_xml, pitch_object)
           end
           rescue ActiveRecord::RecordNotUnique
@@ -35,10 +36,12 @@ module Adapters
       movement_scraper = MovementScraper.new
       velocity_scraper = VelocityScraper.new
       release_point_scraper = ReleasePointScraper.new
+      strike_zone_scraper = StrikeZoneScraper.new
       baserunner_scraper.create_baserunner(pitch_xml, pitch_object)
       movement_scraper.create_movement(pitch_xml, pitch_object)
       velocity_scraper.create_velocity(pitch_xml, pitch_object)
       release_point_scraper.create_release_point(pitch_xml, pitch_object)
+      strike_zone_scraper.create_strike_zone(pitch_xml, pitch_object)
     end
   end
 end

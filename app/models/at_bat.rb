@@ -16,5 +16,12 @@
 class AtBat < ActiveRecord::Base
   belongs_to :inning
   has_many :pitches
-  has_and_belongs_to_many :players
+
+  def pitcher
+    Player.find(self.pitcher_id)
+  end
+
+  def batter
+    Player.find(self.batter_id)
+  end
 end

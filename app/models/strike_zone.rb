@@ -15,6 +15,6 @@
 #  updated_at :datetime         not null
 #
 
-class Strikezone < ActiveRecord::Base
+class StrikeZone < ActiveRecord::Base
   belongs_to :pitch
 end

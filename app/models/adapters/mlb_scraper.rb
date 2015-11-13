@@ -24,12 +24,12 @@ module Adapters
           innings_page = click_link_on(inning_index, "all")
           game_scraper.create_games(innings_page)
         end
-        # month.links[6..-1].each do |day_page_link|
-        #   day_page = day_page_link.click
-        #   game_page = click_link_on(day_page, "gid")
-        #   player_index = click_link_on(game_page, "players")
-        #   player_scraper.create_games(player_index)
-        # end
+        month.links[6..-1].each do |day_page_link|
+          day_page = day_page_link.click
+          game_page = click_link_on(day_page, "gid")
+          player_index = click_link_on(game_page, "players")
+          player_scraper.create_players(player_index)
+        end
      end
 
   end

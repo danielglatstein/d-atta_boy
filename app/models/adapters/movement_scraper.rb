@@ -15,15 +15,15 @@ module Adapters
       movement_hash = pitch_xml.each_with_object(hash) do |att, hash|
         case att[0]
         when "pfx_x"
-          hash[pfx_x] = att[1]
+          hash[:pfx_x] = att[1]
         when "pfx_z"
-          hash[pfx_z] = att[1]
+          hash[:pfx_z] = att[1]
         when "break_angle"
-          hash[break_angle] = att[1]
+          hash[:break_angle] = att[1]
         when "break_length"
-          hash[break_length] = att[1]
+          hash[:break_length] = att[1]
         when "spin_rate"
-          hash[spin_rate] = att[1]
+          hash[:spin_rate] = att[1]
         end
       end 
     end

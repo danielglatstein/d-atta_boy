@@ -11,22 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113181918) do
+ActiveRecord::Schema.define(version: 20151113183533) do
 
   create_table "at_bats", force: :cascade do |t|
     t.integer  "inning_id"
+    t.integer  "pitcher_id"
+    t.integer  "batter_id"
     t.integer  "outs"
     t.string   "stand"
-    t.string   "top_or_bottom"
     t.integer  "home_team_runs"
     t.integer  "away_team_runs"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-  end
-
-  create_table "at_bats_players", force: :cascade do |t|
-    t.integer "at_bat_id"
-    t.integer "player_id"
   end
 
   create_table "baserunners", force: :cascade do |t|
@@ -114,7 +110,7 @@ ActiveRecord::Schema.define(version: 20151113181918) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "strikezones", force: :cascade do |t|
+  create_table "strike_zones", force: :cascade do |t|
     t.integer  "pitch_id"
     t.float    "x"
     t.float    "y"

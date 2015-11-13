@@ -10,6 +10,6 @@
 #  updated_at  :datetime         not null
 #
 
-class PitchVelocity < ActiveRecord::Base
+class Velocity < ActiveRecord::Base
   belongs_to :pitch
 end

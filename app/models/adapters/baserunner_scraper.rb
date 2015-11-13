@@ -1,7 +1,7 @@
 module Adapters 
   class BaserunnerScraper
 
-    def create_baserunners(pitch_xml, pitch_object)
+    def create_baserunner(pitch_xml, pitch_object)
       baserunner_hash = get_baserunner_hash(pitch_xml, pitch_object)
       begin
         baserunner_object = Baserunner.create(baserunner_hash)
@@ -17,11 +17,11 @@ module Adapters
       baserunner_hash = pitch_xml.each_with_object(hash) do |att, hash|
          case att[0]
          when "on_1b"
-           hash[on_1b] = att[1]
+           hash[:on_1b] = att[1]
          when "on_2b"
-           hash[on_2b] = att[1]
+           hash[:on_2b] = att[1]
          when "on_3b"
-           hash[on_3b] = att[1]
+           hash[:on_3b] = att[1]
          end
       end 
     end
