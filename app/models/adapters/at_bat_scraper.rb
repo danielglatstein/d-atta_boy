@@ -1,5 +1,17 @@
 module Adapters 
   class AtBatScraper
+
+    def create_at_bats(inning)
+      inning.children.each do |t_or_b|
+          t_or_b.children.each do |at_bat|
+            at_bat_hash = at_bat_scraper.get_at_bat_hash(at_bat, inning)
+            new_at_bat_obj = AtBat.find_or_create_by(at_bat_hash)
+            new_at_bat_obj.top_or_bottom = t_or_b.name
+            new_inning_obj.at_bats << new_at_bat_obj
+          end
+        end
+      end
+    end
     
     def get_at_bat_hash(at_bat, inning)
       hash = Hash.new
