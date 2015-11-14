@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// $(function() {
+
+//   // function displayPlayers() {
+//   //   var string;
+//   //   var data = $("#players").data("players")
+//   //   for(var i = 0; i < data.length; i++) {
+//   //     string = "<li>" + data[i].first + " " + data[i].last + "</li>";
+//   //     $("ul").append(string);
+//   //   }
+//   // }
+
+//   // displayPlayers();
+// });

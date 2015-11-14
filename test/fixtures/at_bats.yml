@@ -4,9 +4,10 @@
 #
 #  id             :integer          not null, primary key
 #  inning_id      :integer
+#  pitcher_id     :integer
+#  batter_id      :integer
 #  outs           :integer
 #  stand          :string
-#  top_or_bottom  :string
 #  home_team_runs :integer
 #  away_team_runs :integer
 #  created_at     :datetime         not null

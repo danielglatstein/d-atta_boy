@@ -15,8 +15,10 @@
 #
 
 class Player < ActiveRecord::Base
-  has_and_belongs_to_many :teams
-  has_and_belongs_to_many :innnings
+
+  # def self.pitchers
+  #   Pitcher.where()
+  # end
 
   def plate_appearances
     AtBat.where(batter_id: self.player_id)
@@ -25,4 +27,5 @@ class Player < ActiveRecord::Base
   def batters_faced
     AtBat.where(player_id: self.player_id)
   end
+
 end

@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  at_bat_id  :integer
-#  type       :string
+#  result     :string
 #  pitch_type :string
 #  nasty      :integer
 #  created_at :datetime         not null

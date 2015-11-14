@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: strikezones
+# Table name: strike_zones
 #
 #  id         :integer          not null, primary key
 #  pitch_id   :integer

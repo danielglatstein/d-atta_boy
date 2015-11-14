@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: pitch_velocities
+# Table name: velocities
 #
 #  id          :integer          not null, primary key
 #  pitch_id    :integer

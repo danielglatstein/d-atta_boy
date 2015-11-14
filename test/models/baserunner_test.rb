@@ -4,9 +4,9 @@
 #
 #  id         :integer          not null, primary key
 #  pitch_id   :integer
-#  on_1b      :boolean
-#  on_2b      :boolean
-#  on_3b      :boolean
+#  on_1b      :integer
+#  on_2b      :integer
+#  on_3b      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
