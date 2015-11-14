@@ -1,6 +1,6 @@
-class CreatePitchVelocities < ActiveRecord::Migration
+class CreateVelocities < ActiveRecord::Migration
   def change
-    create_table :pitch_velocities do |t|
+    create_table :velocities do |t|
       t.integer :pitch_id
       t.float :start_speed
       t.float :end_speed

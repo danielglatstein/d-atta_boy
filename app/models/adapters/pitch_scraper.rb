@@ -23,8 +23,6 @@ module Adapters
           #type is an activerecord keyword, so the column name is changed to "result" instead
          when "type"
            hash[:result] = att[1]
-         when "pitch_type"
-           hash[:pitch_type] = att[1]
          when "nasty"
            hash[:nasty] = att[1]
          end

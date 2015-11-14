@@ -14,6 +14,8 @@ module Adapters
       hash[:pitch_id] = pitch_object.id
       movement_hash = pitch_xml.each_with_object(hash) do |att, hash|
         case att[0]
+        when "pitch_type"
+          hash[:pitch_type] = att[1]
         when "pfx_x"
           hash[:pfx_x] = att[1]
         when "pfx_z"

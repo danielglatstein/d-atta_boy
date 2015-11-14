@@ -1,6 +1,7 @@
 class CreateMovements < ActiveRecord::Migration
   def change
     create_table :movements do |t|
+      t.string :pitch_type
       t.integer :pitch_id
       t.float :pfx_x
       t.float :pfx_z

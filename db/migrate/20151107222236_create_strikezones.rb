@@ -1,6 +1,6 @@
 class CreateStrikezones < ActiveRecord::Migration
   def change
-    create_table :strikezones do |t|
+    create_table :strike_zones do |t|
       t.integer :pitch_id
       t.float :x
       t.float :y
