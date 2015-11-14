@@ -15,7 +15,7 @@ module Adapters
       xml_page = get_players(xml_players)
       xml_page.xpath("//player").each do |player|
         player_hash = get_player_hash(player)
-        Player.create(player_hash)
+        Player.find_or_create_by(player_hash)
       end
     end
 
