@@ -60,6 +60,11 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gon (6.0.1)
+      actionpack (>= 3.0)
+      json
+      multi_json
+      request_store (>= 1.0)
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -143,6 +148,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    request_store (1.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     ruby-graphviz (1.2.2)
@@ -192,6 +198,7 @@ DEPENDENCIES
   annotate
   byebug
   coffee-rails (~> 4.1.0)
+  gon
   inherited_resources
   jbuilder (~> 2.0)
   jquery-rails

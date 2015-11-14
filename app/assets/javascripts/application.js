@@ -15,7 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
-// $(function() {
+$(function() {
+
+  gon.watch(players, )
 
 //   // function displayPlayers() {
 //   //   var string;
@@ -27,4 +29,4 @@
 //   // }
 
 //   // displayPlayers();
-// });
+});

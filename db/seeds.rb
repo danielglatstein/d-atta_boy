@@ -16,6 +16,11 @@ scraper = Adapters::MlbScraper.new
 scraper.page_navigation
 AtBat.where(batter_id: nil).destroy_all
 Player.where(first: nil).destroy_all
+Game.all.each do |game|
+  unless game.innings.length > 0
+    game.destroy
+  end
+end
 
 Team.create( :code => "nya",  :abbrev => "NYY", :team_id => "147", :name => "NY Yankees", :name_full => "New York Yankees", :name_brief => "Yankees")
 

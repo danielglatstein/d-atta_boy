@@ -20,6 +20,10 @@ class Player < ActiveRecord::Base
   #   Pitcher.where()
   # end
 
+  def self.players
+    Player.order(:last).limit(5).pluck(:first, :last)
+  end
+
   def plate_appearances
     AtBat.where(batter_id: self.player_id)
   end
