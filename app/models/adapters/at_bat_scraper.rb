@@ -6,9 +6,7 @@ module Adapters
       inning_xml.children.each do |t_or_b_xml|
         t_or_b_xml.children.each do |at_bat_xml|
           at_bat_hash = get_at_bat_hash(at_bat_xml, inning_object)
-          # if at_bat_hash[:batter_id]  
-            at_bat_object = AtBat.create(at_bat_hash)
-          # end
+          at_bat_object = AtBat.create(at_bat_hash)
           inning_object.at_bats << at_bat_object
           pitch_scraper.create_pitches(at_bat_xml, at_bat_object)
         end
@@ -22,6 +20,8 @@ module Adapters
         case att[0]
         when "o"
           hash[:outs] = att[1]
+        when "event"
+          hash[:event] = att[1]
         when "stand"
           hash[:stand] = att[1]
         when "home_team_runs"
