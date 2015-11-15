@@ -11,6 +11,9 @@ Pitch.sliders
 Pitch.curveballs
 
 11/15 to do: 
+
+missing players from pirates, cardinals and rangers; 
+
 create join table instances!
 innings_players
   when an at_bat is created it has two players, we need to grab the pitcher and batter from every at bat and create_or_find a row of the join table with a matching inning_id and player_id
