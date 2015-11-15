@@ -35,8 +35,10 @@ class Pitch < ActiveRecord::Base
     self.atbat.pitcher_id
   end
   
-  def players
-    {:batter_id => batter, :pitcher_id => pitcher}
+  def pitches(pitcher_id)
+    AtBat.where(pitcher_id: pitcher_id).each_with_object({}) do |at_bat, hash|
+      pitches = at_bat.pitches
+    end
   end
 
 end
