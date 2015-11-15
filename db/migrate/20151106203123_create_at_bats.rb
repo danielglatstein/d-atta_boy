@@ -6,6 +6,7 @@ class CreateAtBats < ActiveRecord::Migration
       t.integer :batter_id
       t.integer :outs
       t.string :stand
+      t.string :event
       t.integer :home_team_runs
       t.integer :away_team_runs
       t.timestamps null: false
