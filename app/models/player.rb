@@ -20,8 +20,11 @@ class Player < ActiveRecord::Base
   #   Pitcher.where()
   # end
 
-  def self.players
-    Player.order(:last).limit(5).pluck(:first, :last)
+  def self.players(limit)
+    unless limit > 0
+      limit = 5
+    end
+    Player.order(:last).limit(limit).pluck(:first, :last)
   end
 
   def plate_appearances
