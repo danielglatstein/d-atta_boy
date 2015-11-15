@@ -30,9 +30,13 @@ module Adapters
         end
         month.links[6..-1].each do |day_page_link|
           day_page = day_page_link.click
-          game_page = click_link_on(day_page, "gid")
-          player_index = click_link_on(game_page, "players")
-          player_scraper.create_players(player_index)
+          day_page.links.each do |day_link|
+            if day_link.text.include?("gid")
+              game_page = click_link_on(day_page, "gid")
+              player_index = click_link_on(game_page, "players")
+              player_scraper.create_players(player_index)
+            end
+          end
         end
      end
 
