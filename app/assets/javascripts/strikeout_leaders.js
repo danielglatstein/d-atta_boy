@@ -7,7 +7,7 @@ var dataSetProperties = {
 }
 
 $(function() {
-  getPitcherStrikeOuts(success);
+  getPitcherStrikeOuts(strikeoutSuccess);
 });
 
 function extractNumberOfStrikeOuts(players) {
@@ -39,17 +39,17 @@ function chartData(categories, inputData) {
   strokeColor: dataSetProperties.strokeColor, highlightFill: dataSetProperties.highlightFill, highlightStroke: dataSetProperties.highlightStroke , data : inputData  } ] };
 }
 
-function getPitcherStrikeOuts(success){
+function getPitcherStrikeOuts(callback){
   $.ajax({
     url: '/strikeout_leaders',
     method: "GET",
-    dataType: "JSONP"
+    dataType: "JSON"
   }).success(function(data){
-    success(data);
+    callback(data.rankings);
   }); 
 }
 
-function success(parsedJSON) {
+function strikeoutSuccess(parsedJSON) {
     var names = extractNames(parsedJSON);
     var numStrikeOuts = extractNumberOfStrikeOuts(parsedJSON);
     var chart = chartData(names, numStrikeOuts);
