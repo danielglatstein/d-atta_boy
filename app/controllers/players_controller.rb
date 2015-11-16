@@ -3,6 +3,11 @@ class PlayersController < ApplicationController
     if params[:players_limit]
       @players = Player.players(params[:players_limit].to_i)
     end
+
+    if params[:at_bat_id]
+      @at_bat = AtBat.find(params[:at_bat_id])
+      @pitches = @at_bat.pitches 
+    end
     
     if params[:pitcher_id]
       @pitcher = Player.find_by(player_id: params[:pitcher_id])
@@ -16,7 +21,7 @@ class PlayersController < ApplicationController
     # gon.watch.players = @players
     respond_to do |format|
       format.html
-      format.json { render :json => {data: @players, batters: @batters, matchups: @matchups} }
+      format.json { render :json => {data: @players, batters: @batters, matchups: @matchups, pitches: @pitches} }
     end
   end
 

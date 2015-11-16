@@ -46,6 +46,26 @@ function batterIdListener() {
             success: function(data, textStatus, xhr) {
                       var matchups = data.matchups;
                       buildMatchupsTable(matchups);
+                      rowClickListener();
+            },
+            error: function() {
+              debugger
+            }
+    });
+  });
+}
+
+function rowClickListener() {
+  $(".matchup_row").on("click", function() {
+    $.ajax({
+            url: "/players",
+            type: "GET",
+            dataType: "json",
+            data: { at_bat_id: $(this.children[4]).text() },
+            complete: function() {},
+            success: function(data, textStatus, xhr) {
+                      var matchups = data.matchups;
+                      buildMatchupsTable(matchups);
             },
             error: function() {
               debugger
@@ -59,12 +79,12 @@ function buildMatchupsTable(matchups) {
   
   var matchups = matchups;
   var table = d3.select('body').append('table');
-
   var columns = [
-    { head: 'Date', cl: 'title', html: ƒ('date') },
-    { head: 'Game', cl: 'center', html: ƒ('game') },
-    { head: 'Inning', cl: 'title', html: ƒ('inning') },
-    { head: 'Result', cl: 'center', html: ƒ('result') },
+    { head: 'Date', cl: 'date', html: ƒ('date') },
+    { head: 'Game', cl: 'game', html: ƒ('game') },
+    { head: 'Inning', cl: 'inning', html: ƒ('inning') },
+    { head: 'Result', cl: 'result', html: ƒ('result') },
+    { head: 'at_bat_id', cl: 'at_bat_id', html: ƒ('at_bat_id') }
     ];
     
 
@@ -74,11 +94,12 @@ function buildMatchupsTable(matchups) {
         .append('th')
         .attr('class', ƒ('cl'))
         .text(ƒ('head'));
-
+    
     table.append('tbody')
         .selectAll('tr')
         .data(matchups).enter()
         .append('tr')
+        .attr('class', 'matchup_row')
         .selectAll('td')
         .data(function(row, i) {
             return columns.map(function(c) {
@@ -93,7 +114,7 @@ function buildMatchupsTable(matchups) {
         .append('td')
         .html(ƒ('html'))
         .attr('class', ƒ('cl'));
-
+        $(".at_bat_id").hide();
 }
 
 function appendBatterOptions(batters) {
@@ -133,7 +154,6 @@ $(document).on("click", '#update_players', function() {
 
 function drawTable(players) {
   $("table").remove();
-    debugger
     var players = players.data;
     var table = d3.select('body').append('table');
 

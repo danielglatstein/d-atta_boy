@@ -34,7 +34,7 @@ class Player < ActiveRecord::Base
       inning = at_bat.inning.number
       result = at_bat.event
       date = at_bat.game_date[0..9]
-      arr.push({game: game, inning: inning, result: result, date: date, at_bat: at_bat})
+      arr.push({game: game, inning: inning, result: result, date: date, at_bat_id: at_bat.id})
     end
   end
 
