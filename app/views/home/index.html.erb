@@ -1,4 +1,10 @@
 <style>
+
+@font-face {
+    font-family: 'bosox';
+    src: url(./app/assets/fonts/bosox_heavy.ttf) format("truetype");
+}
+
 html, body {
   height: 100%;
   width: 100%;
@@ -15,6 +21,7 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 0.8; 
 }
 
 #wrapper {
@@ -25,11 +32,22 @@ html, body {
   color: #333;
 
 }
+a, a:hover, a:active, a:visited { color: white; 
+text-decoration:none;}
 
 h6 {
-    font-size: 750%;
-    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 15%;
+    left: 40%;
+    font-size: 500%;
+
+    font-family: 'bosox';
 }
 </style>
 
 <%= video_tag "home.mp4", :controls => false, :autobuffer => true, :autoplay => true, :loop => true, :id => "home-video"%>
+  <div>
+   <h6><font color = "white"><p><a href="/players">d'ATTA BOY</a></p></h6></font>
+  </div>
