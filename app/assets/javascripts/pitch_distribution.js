@@ -96,5 +96,10 @@ function graphPitches(data) {
 };
 
 function checkBoxListener() {
-  
+  $("input[type='checkbox']").on("click", function() {
+    if($(this).val() == "all") {
+      $("circle").toggle();
+    }
+    $("." + $(this).val()).toggle();
+  })
 }
