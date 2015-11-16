@@ -1,0 +1,35 @@
+<style>
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#home-video {
+  z-index: -999;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#wrapper {
+  position: relative;
+  width: 800px;
+  min-height: 400px;
+  margin: 100px auto;
+  color: #333;
+
+}
+
+h6 {
+    font-size: 750%;
+    opacity: 0.5;
+}
+</style>
+
+<%= video_tag "home.mp4", :controls => false, :autobuffer => true, :autoplay => true, :loop => true, :id => "home-video"%>

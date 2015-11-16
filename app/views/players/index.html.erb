@@ -1,21 +1,19 @@
-<h3>D-atta Boy</h3>
-<%= link_to 'Home', welcome_path %>
-<p>2015 Playoffs Roster</p>
-
-<!-- <div id='users-counter'>
-</div> -->
-
-<!-- <button id="update_players">Update Players</button> 
- --><form id="matchup_form">
-  <select id="pitcher_id">
+<div class="form-group">
+<center>
+<form id="matchup_form">
+  <select id="pitcher_id" >
     <option value="choose_pitcher">Choose A Pitcher</option>
+    <div class="col-lg-10">
     <% Player.pitchers.each do |pitcher| %>
       <option value="<%=pitcher%>"> <%= "#{Player.find_by(player_id: pitcher).first} #{Player.find_by(player_id: pitcher).last}" %> </option> %>
     <% end %>
+    </div>
   </select>
   <select id="batter_id">
     <option>Select Batter</option>
   </select>
+  </center>
 </form>
+</div>
 
 <%= javascript_include_tag "application" %>
