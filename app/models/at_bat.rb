@@ -18,6 +18,10 @@ class AtBat < ActiveRecord::Base
   belongs_to :inning
   has_many :pitches
 
+  def matchups(pitcher_id, batter_id)
+    AtBat.where(pitcher_id: pitcher_id, batter_id: batter_id)
+  end
+
   def pitcher
     Player.find(self.pitcher_id)
   end
@@ -25,4 +29,5 @@ class AtBat < ActiveRecord::Base
   def batter
     Player.find(self.batter_id)
   end
+
 end

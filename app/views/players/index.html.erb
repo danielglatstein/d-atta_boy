@@ -5,13 +5,15 @@
 <!-- <div id='users-counter'>
 </div> -->
 
-<p>Update List</p>
-<select id="players_limit">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-</select>
+<button id="update_players">Update Players</button> 
+<form id="matchup_form">
+  <select id="pitcher_id">
+    <option value="choose_pitcher">Choose A Pitcher</option>
+    <% Player.pitchers.each do |pitcher| %>
+      <option value="<%=pitcher%>"> <%= "#{Player.find_by(player_id: pitcher).first} #{Player.find_by(player_id: pitcher).last}" %> </option> %>
+    <% end %>
+  </select>
+  <select id="batter_id">
+    <option>Select Batter</option>
+  </select>
+</form>

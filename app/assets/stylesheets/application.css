@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+tr:hover {
+  background-color: LightCyan;
+}
 body {
     font-family:"Helvetica Neue";
     color: #686765;

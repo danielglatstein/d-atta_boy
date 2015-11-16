@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20151113183533) do
     t.integer  "pitcher_id"
     t.integer  "batter_id"
     t.integer  "outs"
+    t.string   "game_date"
     t.string   "stand"
     t.string   "event"
     t.integer  "home_team_runs"

@@ -18,6 +18,8 @@ module Adapters
       hash[:inning_id] = inning_object.id
       at_bat_hash = at_bat_xml.each_with_object(hash) do |att, hash|
         case att[0]
+        when "start_tfs_zulu"
+          hash[:game_date] = att[1]
         when "o"
           hash[:outs] = att[1]
         when "event"
