@@ -1,19 +1,19 @@
-<div class="form-group">
-<center>
+
 <form id="matchup_form">
-  <select id="pitcher_id" >
+<center>
+  <select id="pitcher_id" style="width: 20%;height:4em">
     <option value="choose_pitcher">Choose A Pitcher</option>
-    <div class="col-lg-10">
-    <% Player.pitchers.each do |pitcher| %>
-      <option value="<%=pitcher%>"> <%= "#{Player.find_by(player_id: pitcher).first} #{Player.find_by(player_id: pitcher).last}" %> </option> %>
-    <% end %>
-    </div>
+      <% Player.pitchers.each do |pitcher| %>
+        <option value="<%=pitcher%>"> <%= "#{Player.find_by(player_id: pitcher).first} #{Player.find_by(player_id: pitcher).last}" %> </option> %>
+      <% end %>
   </select>
-  <select id="batter_id">
+
+  <select id="batter_id" style="width: 20%;height:4em">
     <option>Select Batter</option>
   </select>
-  </center>
+</center>
 </form>
-</div>
+
+
 
 <%= javascript_include_tag "application" %>
