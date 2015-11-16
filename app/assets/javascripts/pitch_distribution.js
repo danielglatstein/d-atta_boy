@@ -91,6 +91,10 @@ function graphPitches(data) {
               .call(yAxisRight);
 
 
-     
+  checkBoxListener();
 
 };
+
+function checkBoxListener() {
+  
+}

@@ -1,37 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 
-<!doctype html>
-<meta charset="utf-8">
  
-  <style>
 
-  body { font: 12px Arial;}
-
-  path { 
-      stroke: steelblue;
-      stroke-width: 2;
-      fill: none;
-  }
-
-  .axis path,
-  .axis line {
-      fill: none;
-      stroke: grey;
-      stroke-width: 1;
-      shape-rendering: crispEdges;
-  }
-
-  </style>
 <center>
 <h1>Pitch Distribution</h1>
 <form id="matchup_form">
+  <% pitch_types = [["FA", "Fast Ball"], ["FF", "Four-Seam Fast Ball"], ["FT", "Two-Seam Fast Ball"], ["FC", "Fast Cutter"], ["FS", "Fast Ball Sinker"], ["SL", "Slider"], ["CH", "Changeup"], ["CB", "Curve Ball"], ["KC", "Knuckle-Curve"], ["KB", "Knuckleball"], ["EP", "Eephus"]] %>
+  <p>
   <select id="pitchers">
       <option value="choose_pitcher">Choose A Pitcher</option>
       <% Player.pitchers.each do |pitcher| %>
         <option value="<%=pitcher%>"> <%= "#{Player.find_by(player_id: pitcher).first} #{Player.find_by(player_id: pitcher).last}" %> </option> %>
       <% end %>
     </select>
+  </p>
+  <%= check_box_tag "all", "all", checked=true %>
+    <%= "Check All" %>
+  <% pitch_types.each do |type| %>
+    <%= check_box_tag type[1], type[0], checked=true %>
+    <%= type[1] %>
+  <% end %>
 </form>
 
 
