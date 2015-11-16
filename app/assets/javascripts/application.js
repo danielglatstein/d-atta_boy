@@ -64,14 +64,72 @@ function rowClickListener() {
             data: { at_bat_id: $(this.children[4]).text() },
             complete: function() {},
             success: function(data, textStatus, xhr) {
-                      var matchups = data.matchups;
-                      buildMatchupsTable(matchups);
+  
+                      var pitches_data = data.pitches_data;
+                      buildPitchesTable(pitches_data);
             },
             error: function() {
               debugger
             }
     });
   });
+}
+
+function buildPitchesTable(pitches_data) {
+  $("table").remove();
+  var pitches_data = pitches_data;
+  var table = d3.select('body').append('table');
+  var columns = [
+    { head: 'Result', cl: 'result', html: ƒ('result') },
+    { head: 'Type', cl: 'type', html: ƒ('type') },
+    { head: 'nasty', cl: 'nasty', html: ƒ('nasty') },
+    { head: 'On 1b', cl: 'on_1b', html: ƒ('on_1b') },
+    { head: 'On 2b', cl: 'on_2b', html: ƒ('on_2b') },
+    { head: 'On 3b', cl: 'on_3b', html: ƒ('on_3b') },
+    { head: 'pfx_x', cl: 'pfx_x', html: ƒ('pfx_x') },
+    { head: 'pfx_z', cl: 'pfx_z', html: ƒ('pfx_z') },
+    { head: 'Break Angle', cl: 'break_angle', html: ƒ('break_angle') },
+    { head: 'Break Length', cl: 'break_length', html: ƒ('break_length') },
+    { head: 'Spin Rate', cl: 'spin_rate', html: ƒ('spin_rate') },
+    { head: 'Start Speed', cl: 'start_speed', html: ƒ('start_speed') },
+    { head: 'End Speed', cl: 'end_speed', html: ƒ('end_speed') }
+    ];
+    
+
+    table.append('thead').append('tr')
+        .selectAll('th')
+        .data(columns).enter()
+        .append('th')
+        .attr('class', ƒ('cl'))
+        .text(ƒ('head'));
+    
+    table.append('tbody')
+        .selectAll('tr')
+        .data(pitches_data).enter()
+        .append('tr')
+        .attr('class', 'matchup_row')
+        .selectAll('td')
+        .data(function(row, i) {
+            return columns.map(function(c) {
+                // compute cell values for this specific row
+                var cell = {};
+                d3.keys(c).forEach(function(k) {
+                    cell[k] = typeof c[k] == 'function' ? c[k](row,i) : c[k];
+                });
+                return cell;
+            });
+        }).enter()
+        .append('td')
+        .html(ƒ('html'))
+        .attr('class', ƒ('cl'));
+        $(".at_bat_id").hide();
+}
+
+function appendBatterOptions(batters) {
+  $(".batter").remove();
+  for(var i = 0; i < batters.length; i++){
+    $("#batter_id").append('<option class="batter" value="' + batters[i].id + '">' + batters[i].name + '</option>');
+  }
 }
 
 function buildMatchupsTable(matchups) {
