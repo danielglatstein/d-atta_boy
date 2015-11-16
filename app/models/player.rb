@@ -65,8 +65,16 @@ class Player < ActiveRecord::Base
     end
   end
 
-  def home_run_total
-    plate_appearances.where(event: "Home Run").count
+  def self.top_10_ops
+    ascending_array = Player.all.sort_by {| player| player.ops }
+    binding.pry
+    descending_array = ascending_array.reverse
+    top_ten = descending_array[0..9]
+    top_ten.each_with_object([]) do |player, array|
+      full_name = "#{player.first} #{player.last}"
+      hash = {name: full_name, ops: player.ops}
+      array.push(hash)
+    end
   end
 
   def batters_faced
@@ -80,6 +88,79 @@ class Player < ActiveRecord::Base
 
   def plate_appearances
     AtBat.where(batter_id: self.player_id)
+  end
+
+  def total_plate_appearances
+    plate_appearances.count.to_f
+  end
+
+  def singles_total
+    plate_appearances.where(event: "Single").count.to_f
+  end
+
+  def doubles_total
+    plate_appearances.where(event: "Double").count.to_f
+  end
+
+  def triples_total
+    plate_appearances.where(event: "Triple").count.to_f
+  end
+
+  def home_run_total
+    plate_appearances.where(event: "Home Run").count.to_f
+  end
+
+  def walks_total
+    plate_appearances.where(event: "Walk").count.to_f
+  end
+
+  def sac_fly_total
+    plate_appearances.where(event: "Sac Fly").count.to_f
+  end
+
+  def sac_bunt_total
+    plate_appearances.where(event: "Sac Bunt").count.to_f
+  end
+
+  def sac_total
+    sac_bunt_total + sac_fly_total
+  end
+
+  def hbp_total
+    plate_appearances.where(event: "Hit By Pitch").count
+  end
+
+  def total_hits
+    hits = singles_total + doubles_total + triples_total + home_run_total
+    hits
+  end
+
+  def total_bases
+    total_bases = singles_total + (2 * doubles_total) + (3 * triples_total) + (4 * home_run_total)
+    total_bases
+  end
+
+  def total_abs
+    without_walks = total_plate_appearances - walks_total
+    without_hbp = without_walks - hbp_total
+    abs = without_hbp - sac_total
+    abs
+  end
+
+  def slg
+    slg = total_bases/total_abs
+  end
+
+  def obp
+    top = (total_hits + walks_total + hbp_total)
+    bottom = (total_abs + walks_total + sac_total + hbp_total)
+    obp = top/bottom
+    obp.to_f
+  end
+
+  def ops
+    ops = slg + obp
+    ops.to_f
   end
 
   def strike_out_total
