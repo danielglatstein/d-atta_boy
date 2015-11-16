@@ -2,8 +2,12 @@
 <html>
 <head>
   <title>MlbScraper</title>
+  <%= javascript_include_tag 'jquery.min' %>
   <%= include_gon %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'Chart' %>
+    <%= javascript_include_tag 'top_home_run_hitters' %>
+    <%= javascript_include_tag 'strikeout_leaders' %>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="https://rawgit.com/gka/d3-jetpack/master/d3-jetpack.js"></script>
     <style type="text/css">

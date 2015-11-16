@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :players
   get "players" => "players#index"
+  get "home_run_leaders" => "players#home_run_leaders"
+  get "strikeout_leaders" => "players#strikeout_leaders"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

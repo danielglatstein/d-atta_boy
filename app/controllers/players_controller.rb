@@ -8,4 +8,19 @@ class PlayersController < ApplicationController
     end
   end
 
+  def strikeout_leaders
+    @rankings = Player.top_5_stike_out_pitchers
+    respond_to do |format|
+      format.html
+      format.json {render :json => {:rankings => @rankings}}
+    end
+  end
+
+  def home_run_leaders
+    @rankings = Player.top_5_home_run_hitters
+    respond_to do |format|
+      format.html
+      format.json {render :json => {:rankings => @rankings}}
+    end
+  end
 end
