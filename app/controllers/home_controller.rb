@@ -1,10 +1,12 @@
 class HomeController < ApplicationController 
-  layout false
   
+
   def index
+    render :layout => nil
   end
 
   def show
+
   end
 
 end
