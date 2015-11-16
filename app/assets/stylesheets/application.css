@@ -14,6 +14,35 @@
  *= require_self
  */
 
+ .FA { fill: red;}
+
+ .FF { fill: orange;}
+
+ .FT { fill: yellow;}
+
+ .FC { fill: green;}
+
+ .FS { fill: blue;}
+
+ .SL { fill: darkred;}
+
+ .CH { fill: violet;}
+
+ .KC { fill: black;}
+
+ .KN { fill: teal;}
+
+ .EP { fill: darkgreen;}
+
+
+svg {
+    position: relative;
+    left: 300px;
+}
+ #data > g  {
+    color: black;
+ }
+
 tr:hover {
   background-color: LightCyan;
 }

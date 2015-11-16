@@ -1,25 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Pitches</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!doctype html>
+<meta charset="utf-8">
+ 
+  <style>
 
-  <tbody>
-    <% @pitches.each do |pitch| %>
-      <tr>
-        <td><%= link_to 'Show', pitch %></td>
-        <td><%= link_to 'Edit', edit_pitch_path(pitch) %></td>
-        <td><%= link_to 'Destroy', pitch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  body { font: 12px Arial;}
 
-<br>
+  path { 
+      stroke: steelblue;
+      stroke-width: 2;
+      fill: none;
+  }
 
-<%= link_to 'New Pitch', new_pitch_path %>
+  .axis path,
+  .axis line {
+      fill: none;
+      stroke: grey;
+      stroke-width: 1;
+      shape-rendering: crispEdges;
+  }
+
+  </style>
+<center>
+<h1>Pitch Distribution</h1>
+<form id="matchup_form">
+  <select id="pitchers">
+      <option value="choose_pitcher">Choose A Pitcher</option>
+      <% Player.pitchers.each do |pitcher| %>
+        <option value="<%=pitcher%>"> <%= "#{Player.find_by(player_id: pitcher).first} #{Player.find_by(player_id: pitcher).last}" %> </option> %>
+      <% end %>
+    </select>
+</form>
+
+
+<!-- create container element for visualization -->
+<div id="viz"></div></center>
+<!-- load D3js -->
+<script src="http://www.d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+<%= javascript_include_tag "pitch_distribution" %>

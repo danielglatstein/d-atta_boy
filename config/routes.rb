@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :players
 
+  resources :pitches
+
   get "/" => "players#welcome", as: :welcome
 
   get "players" => "players#index"

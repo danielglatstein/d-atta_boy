@@ -78,6 +78,15 @@ class Player < ActiveRecord::Base
     end
   end
 
+  def pitches
+    at_bats = AtBat.where(pitcher_id: self.player_id)
+    pitches = at_bats.each_with_object([]) do |at_bat, arr|
+      at_bat.pitches.each do |pitch|
+        arr.push({x: pitch.strike_zone.x, y: pitch.strike_zone.y, type: pitch.pitch_type})
+      end
+    end
+  end
+
   def plate_appearances
     AtBat.where(batter_id: self.player_id)
   end

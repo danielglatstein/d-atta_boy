@@ -4,8 +4,14 @@ class PitchesController < ApplicationController
   respond_to :html
 
   def index
-    @pitches = Pitch.all
-    respond_with(@pitches)
+    if params[:pitcher_id]
+      @pitcher = Player.find_by(player_id: params[:pitcher_id])
+      @pitches = @pitcher.pitches
+    end
+    respond_to do |format|
+      format.html
+      format.json { render :json => {pitches: @pitches} }
+    end
   end
 
 
