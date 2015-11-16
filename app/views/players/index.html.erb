@@ -5,8 +5,8 @@
 <!-- <div id='users-counter'>
 </div> -->
 
-<button id="update_players">Update Players</button> 
-<form id="matchup_form">
+<!-- <button id="update_players">Update Players</button> 
+ --><form id="matchup_form">
   <select id="pitcher_id">
     <option value="choose_pitcher">Choose A Pitcher</option>
     <% Player.pitchers.each do |pitcher| %>
@@ -17,3 +17,5 @@
     <option>Select Batter</option>
   </select>
 </form>
+
+<%= javascript_include_tag "application" %>

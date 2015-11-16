@@ -83,7 +83,7 @@ class Player < ActiveRecord::Base
   end
 
   def strike_out_total
-    batters_faced.where(event: "Strikeout").count
+    AtBat.where(pitcher_id: self.player_id, event: "Strikeout").count
   end
 
 end
