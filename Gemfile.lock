@@ -44,6 +44,8 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.0.0)
+    chart-js-rails (0.0.9)
+      railties (> 3.1)
     choice (0.2.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -197,6 +199,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   byebug
+  chart-js-rails
   coffee-rails (~> 4.1.0)
   gon
   inherited_resources
