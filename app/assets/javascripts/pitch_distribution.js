@@ -45,7 +45,6 @@ function graphPitches(data) {
              .range([400, 20]);
 
 
-
   svg.selectAll("circle")
               .data(data)
               .enter()
@@ -98,6 +97,7 @@ function graphPitches(data) {
 function buildPitchTypeList(uncheckedPitches) {
   pitchTypes = ["FA", "FF", "FT", "FC", "FS", "SL", "CH", "KC", "KN", "EP", "SI"];
   $data_points = d3.selectAll("circle")[0]
+  
   var pitchTypeHash = {};
   pitchTypeHash["total"] = 0;
   var type;
@@ -108,6 +108,7 @@ function buildPitchTypeList(uncheckedPitches) {
       pitchTypeHash["total"] = pitchTypeHash["total"] + 1;
     } else {
       pitchTypeHash[type] = 1;
+      pitchTypeHash["total"] = pitchTypeHash["total"] + 1;
     }
   }  
 
@@ -169,6 +170,10 @@ function buildPitchTypeList(uncheckedPitches) {
         .append('td')
         .html(ƒ('html'))
         .attr('class', ƒ('cl'));
+
+        $.each($($("td")), function(index, value) {
+          $(value).attr("class", $(value).text());
+        });
 }
 
 function pitchTypeListListener() {
