@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   
   root to: 'home#index'
+  
+  get "/directory" => 'home#show'
 
+  resources :games
+  
   resources :players
 
   resources :pitches
