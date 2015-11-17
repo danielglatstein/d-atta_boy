@@ -34,7 +34,7 @@ function graphPitches(data) {
   var svg = d3.select("#viz")
               .append("svg")
               .attr("class", "pitch_distribution")
-              .attr("width", "550")
+              .attr("width", "450")
               .attr("height", "550");
 
   var xScale = d3.scale.linear()

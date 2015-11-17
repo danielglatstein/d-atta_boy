@@ -27,18 +27,23 @@ form#pitches_form {
   font-size: 125%;
 }
 
+span#pitch_type_list {
+  width: 300px;
+}
+
 table.pitch_type_counts {
   position: relative;
-  right:360px;
-  top: 50px;
+  right: 0px;
+  display: inline-block;
   width: 200px;
   z-index: 1;
 }
 
 svg.pitch_distribution {
-  position: absolute;
+  position: relative;
+  right: 0px;
   bottom: 100px;
-  left: 1000px;
+  display: inline-block;
   z-index: 1;
   margin-top: 0px;
 }
