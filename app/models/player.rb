@@ -192,10 +192,16 @@ class Player < ActiveRecord::Base
   end
 
   def slg
+    if self.total_abs == 0
+      return 0.0
+    end
     slg = total_bases.to_f/total_abs.to_f
   end
 
   def obp
+    if self.total_abs < 10
+      return 0.0
+    end
     top = (total_hits + walks_total + hbp_total)
     bottom = (total_abs + walks_total + sac_total + hbp_total)
     obp = top.to_f/bottom.to_f
@@ -203,7 +209,6 @@ class Player < ActiveRecord::Base
 
   def ops
     ops = slg + obp
-    ops
   end
 
   def strike_out_total

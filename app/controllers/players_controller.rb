@@ -40,4 +40,12 @@ class PlayersController < ApplicationController
       format.json {render :json => {:rankings => @rankings}}
     end
   end
+
+  def ops_leaders
+    @rankings = Player.top_10_ops
+    respond_to do |format|
+      format.html
+      format.json {render :json => {:rankings => @rankings}}
+    end
+  end
 end

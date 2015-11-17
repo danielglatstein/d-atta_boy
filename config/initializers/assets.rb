@@ -14,6 +14,7 @@ Rails.application.config.assets.precompile += %w( strikeout_leaders.js )
 Rails.application.config.assets.precompile += %w( top_home_run_hitters.js )
 Rails.application.config.assets.precompile += %w( jquery.min.js )
 Rails.application.config.assets.precompile += %w( pitch_distribution.js )
+Rails.application.config.assets.precompile += %w( ops_leaders.js )
 # =======
 # Rails.application.config.assets.precompile += %w( vjs.eot )
 # Rails.application.config.assets.precompile += %w( vjs.woff )
