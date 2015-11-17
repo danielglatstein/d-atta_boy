@@ -23,12 +23,13 @@
 @import "bootswatch/journal/bootswatch";
 
 form#pitches_form {
+  bottom-margin: 400px; 
   width: 350px;
   font-size: 125%;
 }
 
 span#pitch_type_list {
-  width: 300px;
+  width: 200px;
 }
 
 table.pitch_type_counts {
@@ -39,13 +40,13 @@ table.pitch_type_counts {
   z-index: 1;
 }
 
-svg.pitch_distribution {
+svg.pitch_distribution { 
+  margin-top: 100px; 
   position: relative;
   right: 0px;
   bottom: 100px;
   display: inline-block;
   z-index: 1;
-  margin-top: 0px;
 }
 
 

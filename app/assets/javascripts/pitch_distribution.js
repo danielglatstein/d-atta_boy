@@ -130,10 +130,8 @@ function buildPitchTypeList(uncheckedPitches) {
 
   for(var i = 0; i < pitchTypes.length; i++) {
     if(pitchTypeHash[pitchTypes[i]]) {
-      debugger
       $("input[value='" + pitchTypes[i] + "']").prop("checked", true);
     } else {
-      debugger
       $("input[value='" + pitchTypes[i] + "']").prop("checked", false);
     }
   }  
@@ -180,7 +178,6 @@ function buildPitchTypeList(uncheckedPitches) {
 
 function pitchTypeListListener() {
   $("#pitchers").on("change", function() {
-    debugger
     $("input[type='checkbox']").attr("checked", false);
     buildPitchTypeList();
   });
@@ -197,7 +194,6 @@ function checkBoxListener() {
     $.each( p, function(index, box) {
       checkedPitches.push($(box).val());
     });
-    debugger
     $("input[type='checkbox']").attr("checked", false);
     buildPitchTypeList(checkedPitches);
   });
