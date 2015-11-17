@@ -127,11 +127,13 @@ function buildPitchTypeList(uncheckedPitches) {
     pitchTypeArr.push(hash);
   });
 
-  for(var i = 0; i < pitchTypes.length; i++) {
-    if(pitchTypeHash[pitchTypes[i]]) {
-      $("input[value='" + pitchTypes[i] + "']").attr("checked", "checked");
-    }
-  }  
+  // for(var i = 0; i < pitchTypes.length; i++) {
+  //   if(pitchTypeHash[pitchTypes[i]]) {
+  //     $("input[value='" + pitchTypes[i] + "']").attr("checked", true);
+  //   } else {
+  //     $("input[value='" + pitchTypes[i] + "']").attr("checked", false);
+  //   }
+  // }  
 
   $("table").remove();
 
