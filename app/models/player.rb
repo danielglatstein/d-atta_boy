@@ -67,7 +67,6 @@ class Player < ActiveRecord::Base
 
   def self.top_10_ops
     ascending_array = Player.all.sort_by {| player| player.ops }
-    binding.pry
     descending_array = ascending_array.reverse
     top_ten = descending_array[0..9]
     top_ten.each_with_object([]) do |player, array|
@@ -91,43 +90,79 @@ class Player < ActiveRecord::Base
   end
 
   def total_plate_appearances
-    plate_appearances.count.to_f
+    if plate_appearances
+      plate_appearances.count.to_f
+    else
+      0.0000000
+    end
   end
 
   def singles_total
-    plate_appearances.where(event: "Single").count.to_f
+    if plate_appearances
+      plate_appearances.where(event: "Single").count.to_f
+    else
+      0.0000000
+    end
   end
 
   def doubles_total
-    plate_appearances.where(event: "Double").count.to_f
+    if plate_appearances
+      plate_appearances.where(event: "Double").count.to_f
+    else
+      0.0000000
+    end
   end
 
   def triples_total
-    plate_appearances.where(event: "Triple").count.to_f
+    if plate_appearances
+      plate_appearances.where(event: "Triple").count.to_f
+    else
+      0.0000000
+    end
   end
 
   def home_run_total
-    plate_appearances.where(event: "Home Run").count.to_f
+    if plate_appearances
+      plate_appearances.where(event: "Home Run").count.to_f
+    else
+      0.0000000
+    end
   end
 
   def walks_total
-    plate_appearances.where(event: "Walk").count.to_f
+    if plate_appearances
+      plate_appearances.where(event: "Walk").count.to_f
+    else
+      0.0000000
+    end
   end
 
   def sac_fly_total
-    plate_appearances.where(event: "Sac Fly").count.to_f
+    if plate_appearances
+      plate_appearances.where(event: "Sac Fly").count.to_f
+    else
+      0.000000
+    end
   end
 
   def sac_bunt_total
-    plate_appearances.where(event: "Sac Bunt").count.to_f
+    if plate_appearances
+      plate_appearances.where(event: "Sac Bunt").count.to_f
+    else
+      0.000000
+    end
+  end
+
+  def hbp_total
+    if plate_appearances
+      plate_appearances.where(event: "Hit By Pitch").count
+    else
+      0.0000000
+    end
   end
 
   def sac_total
     sac_bunt_total + sac_fly_total
-  end
-
-  def hbp_total
-    plate_appearances.where(event: "Hit By Pitch").count
   end
 
   def total_hits
@@ -148,19 +183,18 @@ class Player < ActiveRecord::Base
   end
 
   def slg
-    slg = total_bases/total_abs
+    slg = total_bases.to_f/total_abs.to_f
   end
 
   def obp
     top = (total_hits + walks_total + hbp_total)
     bottom = (total_abs + walks_total + sac_total + hbp_total)
-    obp = top/bottom
-    obp.to_f
+    obp = top.to_f/bottom.to_f
   end
 
   def ops
     ops = slg + obp
-    ops.to_f
+    ops
   end
 
   def strike_out_total

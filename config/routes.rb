@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   
   get "/directory" => 'home#show'
 
+  resources :games
+  
   resources :players
+
+  resources :pitches
 
   get "/" => "players#welcome", as: :welcome
 
