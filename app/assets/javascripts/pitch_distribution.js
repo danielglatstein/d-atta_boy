@@ -128,13 +128,15 @@ function buildPitchTypeList(uncheckedPitches) {
     pitchTypeArr.push(hash);
   });
 
-  // for(var i = 0; i < pitchTypes.length; i++) {
-  //   if(pitchTypeHash[pitchTypes[i]]) {
-  //     $("input[value='" + pitchTypes[i] + "']").attr("checked", true);
-  //   } else {
-  //     $("input[value='" + pitchTypes[i] + "']").attr("checked", false);
-  //   }
-  // }  
+  for(var i = 0; i < pitchTypes.length; i++) {
+    if(pitchTypeHash[pitchTypes[i]]) {
+      debugger
+      $("input[value='" + pitchTypes[i] + "']").prop("checked", true);
+    } else {
+      debugger
+      $("input[value='" + pitchTypes[i] + "']").prop("checked", false);
+    }
+  }  
 
   $("table").remove();
 
@@ -178,6 +180,8 @@ function buildPitchTypeList(uncheckedPitches) {
 
 function pitchTypeListListener() {
   $("#pitchers").on("change", function() {
+    debugger
+    $("input[type='checkbox']").attr("checked", false);
     buildPitchTypeList();
   });
   $("").on("click", function() {
@@ -193,6 +197,8 @@ function checkBoxListener() {
     $.each( p, function(index, box) {
       checkedPitches.push($(box).val());
     });
+    debugger
+    $("input[type='checkbox']").attr("checked", false);
     buildPitchTypeList(checkedPitches);
   });
 }
