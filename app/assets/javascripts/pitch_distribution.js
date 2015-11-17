@@ -59,7 +59,7 @@ function graphPitches(data) {
               .attr("class", function(d) {
                 return d.type
               })
-              .attr("r", 3);
+              .attr("r", 4);
 
   var xAxisBottom = d3.svg.axis()
               .scale(xScale)
@@ -96,6 +96,7 @@ function graphPitches(data) {
 };
 
 function buildPitchTypeList(uncheckedPitches) {
+  pitchTypes = ["FA", "FF", "FT", "FC", "FS", "SL", "CH", "KC", "KN", "EP", "SI"];
   $data_points = d3.selectAll("circle")[0]
   var pitchTypeHash = {};
   pitchTypeHash["total"] = 0;
@@ -108,11 +109,13 @@ function buildPitchTypeList(uncheckedPitches) {
     } else {
       pitchTypeHash[type] = 1;
     }
-  }
+  }  
 
-  for(var i = 0; i < uncheckedPitches.length; i++) {
-    if(pitchTypeHash[uncheckedPitches[i]]){
-      delete pitchTypeHash[uncheckedPitches[i]];
+  if(uncheckedPitches) {
+    for(var i = 0; i < uncheckedPitches.length; i++) {
+      if(pitchTypeHash[uncheckedPitches[i]]){
+        delete pitchTypeHash[uncheckedPitches[i]];
+      }
     }
   }
 
@@ -124,6 +127,11 @@ function buildPitchTypeList(uncheckedPitches) {
     pitchTypeArr.push(hash);
   });
 
+  for(var i = 0; i < pitchTypes.length; i++) {
+    if(pitchTypeHash[pitchTypes[i]]) {
+      $("input[value='" + pitchTypes[i] + "']").attr("checked", "checked");
+    }
+  }  
 
   $("table").remove();
 
@@ -171,7 +179,7 @@ function pitchTypeListListener() {
 }
 
 function checkBoxListener() {
-  $("input[type='checkbox']").on("change", function() {
+  $("input[type='checkbox']").on("click", function() {
     $("circle." + $(this).val()).toggle();
     checkedPitches = [];
     p = $("input:checkbox:not(:checked)").slice(0,$("input:checkbox:not(:checked)").length)

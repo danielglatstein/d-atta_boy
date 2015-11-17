@@ -9,15 +9,17 @@
   <p>
   <select id="pitchers">
       <option value="choose_pitcher">Choose A Pitcher</option>
-      <% Player.pitchers.each do |pitcher| %>
+      <% Player.pitchers.sort_by{|id| Player.find_by(player_id: id).last}.each do |pitcher| %>
         <option value="<%=pitcher%>"> <%= "#{Player.find_by(player_id: pitcher).first} #{Player.find_by(player_id: pitcher).last}" %> </option> %>
       <% end %>
     </select>
   </p>
-  <% @pitch_types.each do |type| %>
-    <%= check_box_tag type[1], type[0], {class: "pitch_type_checkbox", checked: true} %>
-    <%= type[1] %>
-  <% end %>
+  <div>
+    <% @pitch_types.each do |type| %>
+      <%= check_box_tag type[1], type[0], {class: "pitch_type_checkbox", checked: false} %>
+      <%= type[1] %>
+    <% end %>
+  </div>
 </form>
 
 

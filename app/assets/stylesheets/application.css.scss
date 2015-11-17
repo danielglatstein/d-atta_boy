@@ -22,6 +22,10 @@
 
 @import "bootswatch/journal/bootswatch";
 
+form#matchup_form {
+  width: 400px;
+}
+
 table.pitch_type_counts {
   position: relative;
   right:360px;
