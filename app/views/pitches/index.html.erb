@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 
- 
+ <% @pitch_types = [["FA", "Fast Ball"], ["FF", "Four-Seam Fast Ball"], ["FT", "Two-Seam Fast Ball"], ["FC", "Fast Cutter"], ["FS", "Fast Ball Sinker"], ["SI", "Sinker"], ["SL", "Slider"], ["CH", "Changeup"], ["CU", "Curve Ball"], ["KC", "Knuckle-Curve"], ["KB", "Knuckleball"], ["EP", "Eephus"]] %>
 
 <center>
 <h1>Pitch Distribution</h1>
 <form id="matchup_form">
-  <% pitch_types = [["FA", "Fast Ball"], ["FF", "Four-Seam Fast Ball"], ["FT", "Two-Seam Fast Ball"], ["FC", "Fast Cutter"], ["FS", "Fast Ball Sinker"], ["SL", "Slider"], ["CH", "Changeup"], ["CU", "Curve Ball"], ["KC", "Knuckle-Curve"], ["KB", "Knuckleball"], ["EP", "Eephus"]] %>
   <p>
   <select id="pitchers">
       <option value="choose_pitcher">Choose A Pitcher</option>
@@ -15,9 +14,7 @@
       <% end %>
     </select>
   </p>
-  <%= check_box_tag "all", "all", checked=true %>
-    <%= "Check All" %>
-  <% pitch_types.each do |type| %>
+  <% @pitch_types.each do |type| %>
     <%= check_box_tag type[1], type[0], {class: "pitch_type_checkbox", checked: true} %>
     <%= type[1] %>
   <% end %>
@@ -25,7 +22,9 @@
 
 
 <!-- create container element for visualization -->
-<div id="viz"></div></center>
+<span id="pitch_type_list">
+</span>
+<span id="viz"></span></center>
 <!-- load D3js -->
 <script src="http://www.d3plus.org/js/d3.js"></script>
 

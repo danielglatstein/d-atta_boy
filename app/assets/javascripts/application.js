@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 
+
 $(document).ready( function() {
   $("#pitcher_id").on("change", function() {
 

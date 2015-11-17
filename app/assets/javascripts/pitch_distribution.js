@@ -1,5 +1,7 @@
 $(function(){
   graphPitchesListener();
+  pitchTypeListListener()
+  checkBoxListener();
 });
 
 function graphPitchesListener() {
@@ -31,6 +33,7 @@ function graphPitches(data) {
 
   var svg = d3.select("#viz")
               .append("svg")
+              .attr("class", "pitch_distribution")
               .attr("width", "1000")
               .attr("height", "1000");
 
@@ -89,17 +92,81 @@ function graphPitches(data) {
   svg.append("g")
               .attr("transform", "translate(410,120)")
               .call(yAxisRight);
-
-
-  checkBoxListener();
-
+  buildPitchTypeList();
 };
 
-function checkBoxListener() {
-  $("input[type='checkbox']").on("click", function() {
-    if($(this).val() == "all") {
-      $("circle").toggle();
+function buildPitchTypeList() {
+
+  $data_points = $("circle");
+  var pitchTypeHash = {};
+  pitchTypeHash["total"] = 0;
+  var type;
+  for(var i = 0; i < $data_points.length; i++) {
+    type = $($data_points[i]).attr("class")
+    if(!!pitchTypeHash[type]) {
+      pitchTypeHash[type] = pitchTypeHash[type] + 1;
+      pitchTypeHash["total"] = pitchTypeHash["total"] + 1;
+    } else {
+      pitchTypeHash[type] = 1;
     }
-    $("." + $(this).val()).toggle();
+  }
+  var pitchTypeArr = [];
+  Object.keys(pitchTypeHash).forEach(function (key) { 
+    hash = {};
+    hash["pitchType"] = key;
+    hash["count"] = pitchTypeHash[key];
+    pitchTypeArr.push(hash);
+  })
+
+  $("table").remove();
+
+  var table = d3.select('#pitch_type_list').append('table').attr("class", "pitch_type_counts");
+  var columns = [
+    { head: 'Pitch Type', cl: 'pitchType', html: ƒ('pitchType') },
+    { head: 'Count', cl: 'count', html: ƒ('count') },
+  ]
+
+  table.append('thead').append('tr')
+        .selectAll('th')
+        .data(columns).enter()
+        .append('th')
+        .attr('class', ƒ('cl'))
+        .text(ƒ('head'));
+
+  table.append('tbody')
+        .selectAll('tr')
+        .data(pitchTypeArr).enter()
+        .append('tr')
+        .attr('class', 'matchup_row')
+        .selectAll('td')
+        .data(function(row, i) {
+            return columns.map(function(c) {
+                // compute cell values for this specific row
+                var cell = {};
+                d3.keys(c).forEach(function(k) {
+                    cell[k] = typeof c[k] == 'function' ? c[k](row,i) : c[k];
+                });
+                return cell;
+            });
+        }).enter()
+        .append('td')
+        .html(ƒ('html'))
+        .attr('class', ƒ('cl'));
+}
+
+function pitchTypeListListener() {
+  $("#pitchers").on("change", function() {
+    buildPitchTypeList();
+  });
+  $("").on("click", function() {
+    $("." + $(this).attr("class")).toggle();
+  });
+}
+
+function checkBoxListener() {
+  $("input[type='checkbox']").on("change", function() {
+    debugger
+    $("." + $(this).val()).addClass("visible");
+     buildPitchTypeList();
   })
 }
