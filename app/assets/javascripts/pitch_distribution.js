@@ -95,7 +95,22 @@ function graphPitches(data) {
 };
 
 function buildPitchTypeList(uncheckedPitches) {
-  pitchTypes = ["FA", "FF", "FT", "FC", "FS", "SL", "CH", "KC", "KN", "EP", "SI"];
+  pitchTypes = ["FA", "FF", "FT", "FC", "FS", "SL", "CH", "KC", "KN", "EP", "SI", "CU", "CB"];
+  // pitchTranslationHash = {
+  //   "FA": "Fast Ball",
+  //   "FF": "Four-Seam FB",
+  //   "FT": "Two-Seat FB",
+  //   "FC": "Cutter",
+  //   "FS": "Split-Finger",
+  //   "SL": "Slider",
+  //   "CH": "Changeup",
+  //   "KC": "Knuckle-Curve",
+  //   "KN": "Knuckleball",
+  //   "EP": "Eephus",
+  //   "SI": "Sinker",
+  //   "CU": "Curveball",
+  //   "CB": "Curveball"
+  // }
   $data_points = d3.selectAll("circle")[0]
   
   var pitchTypeHash = {};

@@ -28,8 +28,12 @@ form#pitches_form {
   font-size: 125%;
 }
 
+td {
+  width: 500px;
+}
+
 span#pitch_type_list {
-  width: 200px;
+  width: 500px;
 }
 
 table.pitch_type_counts {
