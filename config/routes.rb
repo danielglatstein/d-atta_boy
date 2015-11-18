@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   
   get "players/batter_list" => "players#batter_list"
 
+  get "ops_leaders" => "players#ops_leaders"
+
   get "home_run_leaders" => "players#home_run_leaders"
 
   get "strikeout_leaders" => "players#strikeout_leaders"
