@@ -1,22 +1,20 @@
 class PlayersController < ApplicationController
-  def index
-  end
 
   def matchups
     @matchups = Player.matchups(params[:pitcher_id], params[:batter_id])
-    format.json { render :json => {matchups: @matchups} }
+    render :json => {matchups: @matchups}
   end
 
   def pitches_data
     @at_bat = AtBat.find(params[:at_bat_id])
     @pitches_data = @at_bat.pitches_data
-    format.json { render :json => {pitches_data: @pitches_data} }
+    render :json => {pitches_data: @pitches_data}
   end
 
   def batters
     @pitcher = Player.find_by(player_id: params[:pitcher_id])
     @batters = @pitcher.batters_faced
-    format.json { render :json => {batters: @batters} }
+    render :json => {batters: @batters}
   end
 
   def strikeout_leaders
