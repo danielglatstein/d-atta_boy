@@ -14,7 +14,11 @@ Rails.application.routes.draw do
 
   get "players" => "players#index"
   
-  get "players/batter_list" => "players#batter_list"
+  get "players/batters" => "players#batters"
+
+  get "players/matchups" => "players#matchups"
+
+  get "players/pitches_data" => "players#pitches_data"
 
   get "ops_leaders" => "players#ops_leaders"
 

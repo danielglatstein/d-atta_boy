@@ -19,7 +19,7 @@ $(document).ready( function() {
   $("#pitcher_id").on("change", function() {
 
     $.ajax({
-            url: "/players",
+            url: "/players/batters",
             type: "GET",
             dataType: "json",
             data: { pitcher_id: $("#pitcher_id").val() }, // This goes to Controller in params hash, i.e. params[:file_name]
@@ -30,7 +30,6 @@ $(document).ready( function() {
                       batterIdListener();
             },
             error: function() {
-              debugger
             }
     });
   });
@@ -39,7 +38,7 @@ $(document).ready( function() {
 function batterIdListener() {
   $("#batter_id").on("change", function() {
     $.ajax({
-            url: "/players",
+            url: "/players/matchups",
             type: "GET",
             dataType: "json",
             data: { pitcher_id: $("#pitcher_id").val(), batter_id: $("#batter_id").val() },
@@ -50,7 +49,6 @@ function batterIdListener() {
                       rowClickListener();
             },
             error: function() {
-              debugger
             }
     });
   });
@@ -59,7 +57,7 @@ function batterIdListener() {
 function rowClickListener() {
   $(".matchup_row").on("click", function() {
     $.ajax({
-            url: "/players",
+            url: "/players/pitches_data",
             type: "GET",
             dataType: "json",
             data: { at_bat_id: $(this.children[4]).text() },
@@ -70,7 +68,6 @@ function rowClickListener() {
                       buildPitchesTable(pitches_data);
             },
             error: function() {
-              debugger
             }
     });
   });
@@ -181,71 +178,4 @@ function appendBatterOptions(batters) {
   for(var i = 0; i < batters.length; i++){
     $("#batter_id").append('<option class="batter" value="' + batters[i].id + '">' + batters[i].name + '</option>');
   }
-}
-
-
-$(document).on("click", '#update_players', function() {
-
-
-
-  $.ajax({
-               url: "/players",
-              type: "GET",
-          dataType: "json",
-              data: { players_limit: $("#players_limit").val() }, // This goes to Controller in params hash, i.e. params[:file_name]
-          complete: function() {},
-           success: function(data, textStatus, xhr) {
-                      // Do something with the response here
-
-                      drawTable(data);
-                      editor.setValue(data.file_content) // Show the file contents in our editor.
-                                                         // editor is defined somewhere above 
-                                                         // 'file_content' is the key we use to respond
-                                                         // in the controller function below
-                    },
-             error: function() {
-              debugger
-                    }
-  });
-});
-
-
-
-function drawTable(players) {
-  $("table").remove();
-    var players = players.data;
-    var table = d3.select('body').append('table');
-
-    var columns = [
-    { head: 'First', cl: 'title', html: ƒ('0') },
-    { head: 'Last', cl: 'center', html: ƒ('1') },
-    ];
-
-    // create table header
-    table.append('thead').append('tr')
-        .selectAll('th')
-        .data(columns).enter()
-        .append('th')
-        .attr('class', ƒ('cl'))
-        .text(ƒ('head'));
-
-    // create table body
-    table.append('tbody')
-        .selectAll('tr')
-        .data(players).enter()
-        .append('tr')
-        .selectAll('td')
-        .data(function(row, i) {
-            return columns.map(function(c) {
-                // compute cell values for this specific row
-                var cell = {};
-                d3.keys(c).forEach(function(k) {
-                    cell[k] = typeof c[k] == 'function' ? c[k](row,i) : c[k];
-                });
-                return cell;
-            });
-        }).enter()
-        .append('td')
-        .html(ƒ('html'))
-        .attr('class', ƒ('cl'));
 }
