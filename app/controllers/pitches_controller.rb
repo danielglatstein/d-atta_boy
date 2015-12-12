@@ -1,19 +1,15 @@
 class PitchesController < ApplicationController
   before_action :set_pitch, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
   def index
-    if params[:pitcher_id]
-      @pitcher = Player.find_by(player_id: params[:pitcher_id])
-      @pitches = @pitcher.pitches
-    end
+    @pitcher = Player.find_by(player_id: params[:pitcher_id])
+    @pitches = @pitcher.pitches
+    
     respond_to do |format|
       format.html
       format.json { render :json => {pitches: @pitches} }
     end
   end
-
 
   private
     def set_pitch
