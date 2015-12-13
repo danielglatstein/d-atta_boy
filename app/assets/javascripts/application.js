@@ -17,6 +17,8 @@
 //= require underscore
 //= require mapper
 //= require world_series
+//= require pitch_sequence
+
 
 
 $(document).ready( function() {
@@ -72,6 +74,7 @@ function rowClickListener() {
 
                       var pitches_data = data.pitches_data;
                       buildPitchesTable(pitches_data);
+                      $('.sequence-button-js').removeClass('hidden')
             },
             error: function() {
               debugger
