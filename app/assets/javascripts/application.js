@@ -7,6 +7,7 @@
 //= require world_series
 //= require pitch_sequence
 //= require players/matchups
+//= require pitch_distribution
 //remember to settle javascipt load by page
 
 

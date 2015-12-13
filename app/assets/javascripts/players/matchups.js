@@ -8,6 +8,8 @@ $(document).ready( function() {
             data: { pitcher_id: $("#pitcher_id").val() }, // This goes to Controller in params hash, i.e. params[:file_name]
             complete: function() {},
             success: function(data, textStatus, xhr) {
+                      $('svg').hide()
+                      $('.sequence-button-js').addClass('hidden')
                       var batters = data.batters
                       appendBatterOptions(batters);
                       batterIdListener();
@@ -30,6 +32,8 @@ function batterIdListener() {
                       var matchups = data.matchups;
                       buildMatchupsTable(matchups);
                       rowClickListener();
+                      $('svg').hide()
+                      $('.sequence-button-js').addClass('hidden')
             },
             error: function() {
             }
@@ -61,7 +65,7 @@ function buildPitchesTable(pitches_data, at_bat_id) {
   $("table").remove();
   var pitches_data = pitches_data;
   var at_bat_id = at_bat_id
-  var table = d3.select('body').append('table');
+  var table = d3.select('#pitches-table').append('table');
   table.attr('class', at_bat_id)
   var columns = [
     { head: 'Result', cl: 'result', html: ƒ('result') },

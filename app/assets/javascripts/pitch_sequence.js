@@ -7,11 +7,10 @@ $(document).on('page:change', function(){
             data: { at_bat_id: $('table').attr('class') },
             complete: function() {},
             success: function(data, textStatus, xhr) {
-                      debugger; 
                       var pitches_data = data.pitches_data;
-
-                      buildPitchesTable(pitches_data);
                       $('.sequence-button-js').removeClass('hidden')
+                      graphPitches(pitches_data)
+                      $('.sequence-button-js').addClass('hidden')
             },
             error: function() {
             }

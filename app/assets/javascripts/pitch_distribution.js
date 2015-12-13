@@ -23,7 +23,7 @@ function graphPitchesListener() {
   });
 }
 
-function graphPitches(data) {
+function graphPitches(data, pauseTime) {
   $("svg").remove();
 
   //Width and height
@@ -31,7 +31,7 @@ function graphPitches(data) {
   var h = 300;
   var padding = 30;
 
-  var svg = d3.select("#viz")
+  var svg = d3.select("#batters-box")
               .append("svg")
               .attr("class", "pitch_distribution")
               .attr("width", "450")
@@ -151,7 +151,7 @@ function buildPitchTypeList(uncheckedPitches) {
     }
   }  
 
-  $("table").remove();
+  // $("table").remove();
 
   var table = d3.select('#pitch_type_list').append('table').attr("class", "pitch_type_counts");
   var columns = [
