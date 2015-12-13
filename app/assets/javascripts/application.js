@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require Chart
 //= require turbolinks
+//= require underscore
+//= require mapper
+//= require world_series
 
 
 $(document).ready( function() {
@@ -65,7 +69,7 @@ function rowClickListener() {
             data: { at_bat_id: $(this.children[4]).text() },
             complete: function() {},
             success: function(data, textStatus, xhr) {
-  
+
                       var pitches_data = data.pitches_data;
                       buildPitchesTable(pitches_data);
             },
@@ -95,7 +99,7 @@ function buildPitchesTable(pitches_data) {
     { head: 'Start Speed', cl: 'start_speed', html: ƒ('start_speed') },
     { head: 'End Speed', cl: 'end_speed', html: ƒ('end_speed') }
     ];
-    
+
 
     table.append('thead').append('tr')
         .selectAll('th')
@@ -103,7 +107,7 @@ function buildPitchesTable(pitches_data) {
         .append('th')
         .attr('class', ƒ('cl'))
         .text(ƒ('head'));
-    
+
     table.append('tbody')
         .selectAll('tr')
         .data(pitches_data).enter()
@@ -135,7 +139,7 @@ function appendBatterOptions(batters) {
 
 function buildMatchupsTable(matchups) {
   $("table").remove();
-  
+
   var matchups = matchups;
   var table = d3.select('body').append('table');
   var columns = [
@@ -145,7 +149,7 @@ function buildMatchupsTable(matchups) {
     { head: 'Result', cl: 'result', html: ƒ('result') },
     { head: 'at_bat_id', cl: 'at_bat_id', html: ƒ('at_bat_id') }
     ];
-    
+
 
     table.append('thead').append('tr')
         .selectAll('th')
@@ -153,7 +157,7 @@ function buildMatchupsTable(matchups) {
         .append('th')
         .attr('class', ƒ('cl'))
         .text(ƒ('head'));
-    
+
     table.append('tbody')
         .selectAll('tr')
         .data(matchups).enter()
@@ -199,7 +203,7 @@ $(document).on("click", '#update_players', function() {
 
                       drawTable(data);
                       editor.setValue(data.file_content) // Show the file contents in our editor.
-                                                         // editor is defined somewhere above 
+                                                         // editor is defined somewhere above
                                                          // 'file_content' is the key we use to respond
                                                          // in the controller function below
                     },

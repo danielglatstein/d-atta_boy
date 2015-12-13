@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  
+
   root to: 'home#index'
-  
+
   get "/directory" => 'home#show'
 
   resources :games
-  
+
+  resources :teams
+
   resources :players
 
   resources :pitches
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   get "/" => "players#welcome", as: :welcome
 
   get "players" => "players#index"
-  
+
   get "players/batter_list" => "players#batter_list"
 
   get "ops_leaders" => "players#ops_leaders"
