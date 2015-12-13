@@ -18,6 +18,12 @@ class AtBat < ActiveRecord::Base
   belongs_to :inning
   has_many :pitches
 
+  def at_bat_pitches
+    self.pitches.each_with_object([]) do |pitch, arr|
+      arr.push({x: pitch.strike_zone.x, y: pitch.strike_zone.y, type: pitch.pitch_type})
+    end
+  end
+
   def matchups(pitcher_id, batter_id)
     AtBat.where(pitcher_id: pitcher_id, batter_id: batter_id)
   end

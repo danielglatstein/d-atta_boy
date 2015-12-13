@@ -37,6 +37,5 @@ module Adapters
         end
       end
     end
-
   end
 end

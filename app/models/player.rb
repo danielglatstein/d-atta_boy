@@ -16,10 +16,6 @@
 
 class Player < ActiveRecord::Base
 
-  # def self.pitchers
-  #   Pitcher.where()
-  # end
-
   def self.players(limit)
     unless limit > 0
       limit = 5
@@ -39,7 +35,6 @@ class Player < ActiveRecord::Base
   end
 
   def self.pitchers
-    pitcher_ids = []
     AtBat.all.pluck(:pitcher_id).uniq
   end
 

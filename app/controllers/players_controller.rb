@@ -1,28 +1,25 @@
 class PlayersController < ApplicationController
-  def index
-    if params[:players_limit]
-      @players = Player.players(params[:players_limit].to_i)
-    end
 
-    if params[:at_bat_id]
-      @at_bat = AtBat.find(params[:at_bat_id])
-      @pitches_data = @at_bat.pitches_data 
-    end
-    
-    if params[:pitcher_id]
-      @pitcher = Player.find_by(player_id: params[:pitcher_id])
-      @batters = @pitcher.batters_faced
-    end
+  def matchups
+    @matchups = Player.matchups(params[:pitcher_id], params[:batter_id])
+    render :json => {matchups: @matchups}
+  end
 
-    if params[:pitcher_id] && params[:batter_id]
-      @matchups = Player.matchups(params[:pitcher_id], params[:batter_id])
-    end
-    # @players = Player.players(params[:players_limit].to_i)
-    # gon.watch.players = @players
-    respond_to do |format|
-      format.html
-      format.json { render :json => {data: @players, batters: @batters, matchups: @matchups, pitches_data: @pitches_data} }
-    end
+  def at_bat_pitches_data
+    @pitches_data = Player.at_bat_pitches(params[:at_bat_id])
+    render :json => {pitches_data: @pitches_data}
+  end
+
+  def pitches_data
+    @at_bat = AtBat.find(params[:at_bat_id])
+    @pitches_data = @at_bat.pitches_data
+    render :json => {pitches_data: @pitches_data, at_bat_id: @at_bat.id}
+  end
+
+  def batters
+    @pitcher = Player.find_by(player_id: params[:pitcher_id])
+    @batters = @pitcher.batters_faced
+    render :json => {batters: @batters}
   end
 
   def strikeout_leaders
