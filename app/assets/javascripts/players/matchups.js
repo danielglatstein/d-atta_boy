@@ -49,6 +49,7 @@ function rowClickListener() {
   
                       var pitches_data = data.pitches_data;
                       buildPitchesTable(pitches_data);
+                      $('.sequence-button-js').removeClass('hidden')
             },
             error: function() {
             }
