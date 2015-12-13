@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require teams
  */
 
 @import "bootstrap-sprockets";
@@ -162,3 +163,8 @@ td, tr {
     opacity: .7;
     cursor: pointer;
 }
+
+    body { font-family: 'Helvetica Neue', Helvetica; font-weight: 300; padding: 20px;}
+    th { text-align: left; }
+    th.center, td.center { text-align: center; }
+    th.num, td.num { text-align: right; }

@@ -8,6 +8,8 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+gem 'chart-js-rails'
+
 gem 'bootswatch-rails'
 
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
@@ -15,6 +17,7 @@ gem 'better_errors', '~> 2.1', '>= 2.1.1'
 gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'video-js-rails', '~> 4.3', '>= 4.3.0.1'
+
 
 group :development, :test do
   gem 'sqlite3'
@@ -24,6 +27,8 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+gem 'underscore-rails'
 
 gem 'chart-js-rails'
 # Use CoffeeScript for .coffee assets and views
@@ -75,4 +80,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

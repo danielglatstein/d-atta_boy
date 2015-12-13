@@ -1,0 +1,1025 @@
+has,prefers,count
+"Pirates","Pirates",0
+"Pirates","Americans",1
+"Pirates","Giants",0
+"Pirates","Athletics",0
+"Pirates","Cubs",0
+"Pirates","White Sox",0
+"Pirates","Tigers",0
+"Pirates","Red Sox",0
+"Pirates","Braves",0
+"Pirates","Phillies",0
+"Pirates","Robins",0
+"Pirates","Reds",0
+"Pirates","Indians",0
+"Pirates","Yankees",1
+"Pirates","Senators",1
+"Pirates","Cardinals",0
+"Pirates","Dodgers",0
+"Pirates","Browns",0
+"Pirates","Twins",0
+"Pirates","Orioles",2
+"Pirates","Mets",0
+"Pirates","Brewers",0
+"Pirates","Padres",0
+"Pirates","Royals",0
+"Pirates","Blue Jays",0
+"Pirates","Marlins",0
+"Pirates","Diamondbacks",0
+"Pirates","Astros",0
+"Pirates","Rockies",0
+"Pirates","Rays",0
+"Pirates","Rangers",0
+"Pirates","Angels",0
+"Americans","Pirates",0
+"Americans","Americans",0
+"Americans","Giants",0
+"Americans","Athletics",0
+"Americans","Cubs",0
+"Americans","White Sox",0
+"Americans","Tigers",0
+"Americans","Red Sox",0
+"Americans","Braves",0
+"Americans","Phillies",0
+"Americans","Robins",0
+"Americans","Reds",0
+"Americans","Indians",0
+"Americans","Yankees",0
+"Americans","Senators",0
+"Americans","Cardinals",0
+"Americans","Dodgers",0
+"Americans","Browns",0
+"Americans","Twins",0
+"Americans","Orioles",0
+"Americans","Mets",0
+"Americans","Brewers",0
+"Americans","Padres",0
+"Americans","Royals",0
+"Americans","Blue Jays",0
+"Americans","Marlins",0
+"Americans","Diamondbacks",0
+"Americans","Astros",0
+"Americans","Rockies",0
+"Americans","Rays",0
+"Americans","Rangers",0
+"Americans","Angels",0
+"Giants","Pirates",0
+"Giants","Americans",0
+"Giants","Giants",0
+"Giants","Athletics",1
+"Giants","Cubs",0
+"Giants","White Sox",0
+"Giants","Tigers",1
+"Giants","Red Sox",0
+"Giants","Braves",0
+"Giants","Phillies",0
+"Giants","Robins",0
+"Giants","Reds",0
+"Giants","Indians",1
+"Giants","Yankees",2
+"Giants","Senators",1
+"Giants","Cardinals",0
+"Giants","Dodgers",0
+"Giants","Browns",0
+"Giants","Twins",0
+"Giants","Orioles",0
+"Giants","Mets",0
+"Giants","Brewers",0
+"Giants","Padres",0
+"Giants","Royals",1
+"Giants","Blue Jays",0
+"Giants","Marlins",0
+"Giants","Diamondbacks",0
+"Giants","Astros",0
+"Giants","Rockies",0
+"Giants","Rays",0
+"Giants","Rangers",1
+"Giants","Angels",0
+"Athletics","Pirates",0
+"Athletics","Americans",0
+"Athletics","Giants",3
+"Athletics","Athletics",0
+"Athletics","Cubs",2
+"Athletics","White Sox",0
+"Athletics","Tigers",0
+"Athletics","Red Sox",0
+"Athletics","Braves",0
+"Athletics","Phillies",0
+"Athletics","Robins",0
+"Athletics","Reds",1
+"Athletics","Indians",0
+"Athletics","Yankees",0
+"Athletics","Senators",0
+"Athletics","Cardinals",1
+"Athletics","Dodgers",1
+"Athletics","Browns",0
+"Athletics","Twins",0
+"Athletics","Orioles",0
+"Athletics","Mets",1
+"Athletics","Brewers",0
+"Athletics","Padres",0
+"Athletics","Royals",0
+"Athletics","Blue Jays",0
+"Athletics","Marlins",0
+"Athletics","Diamondbacks",0
+"Athletics","Astros",0
+"Athletics","Rockies",0
+"Athletics","Rays",0
+"Athletics","Rangers",0
+"Athletics","Angels",0
+"Cubs","Pirates",0
+"Cubs","Americans",0
+"Cubs","Giants",0
+"Cubs","Athletics",0
+"Cubs","Cubs",0
+"Cubs","White Sox",0
+"Cubs","Tigers",2
+"Cubs","Red Sox",0
+"Cubs","Braves",0
+"Cubs","Phillies",0
+"Cubs","Robins",0
+"Cubs","Reds",0
+"Cubs","Indians",0
+"Cubs","Yankees",0
+"Cubs","Senators",0
+"Cubs","Cardinals",0
+"Cubs","Dodgers",0
+"Cubs","Browns",0
+"Cubs","Twins",0
+"Cubs","Orioles",0
+"Cubs","Mets",0
+"Cubs","Brewers",0
+"Cubs","Padres",0
+"Cubs","Royals",0
+"Cubs","Blue Jays",0
+"Cubs","Marlins",0
+"Cubs","Diamondbacks",0
+"Cubs","Astros",0
+"Cubs","Rockies",0
+"Cubs","Rays",0
+"Cubs","Rangers",0
+"Cubs","Angels",0
+"White Sox","Pirates",0
+"White Sox","Americans",0
+"White Sox","Giants",1
+"White Sox","Athletics",0
+"White Sox","Cubs",1
+"White Sox","White Sox",0
+"White Sox","Tigers",0
+"White Sox","Red Sox",0
+"White Sox","Braves",0
+"White Sox","Phillies",0
+"White Sox","Robins",0
+"White Sox","Reds",0
+"White Sox","Indians",0
+"White Sox","Yankees",0
+"White Sox","Senators",0
+"White Sox","Cardinals",0
+"White Sox","Dodgers",0
+"White Sox","Browns",0
+"White Sox","Twins",0
+"White Sox","Orioles",0
+"White Sox","Mets",0
+"White Sox","Brewers",0
+"White Sox","Padres",0
+"White Sox","Royals",0
+"White Sox","Blue Jays",0
+"White Sox","Marlins",0
+"White Sox","Diamondbacks",0
+"White Sox","Astros",1
+"White Sox","Rockies",0
+"White Sox","Rays",0
+"White Sox","Rangers",0
+"White Sox","Angels",0
+"Tigers","Pirates",0
+"Tigers","Americans",0
+"Tigers","Giants",0
+"Tigers","Athletics",0
+"Tigers","Cubs",1
+"Tigers","White Sox",0
+"Tigers","Tigers",0
+"Tigers","Red Sox",0
+"Tigers","Braves",0
+"Tigers","Phillies",0
+"Tigers","Robins",0
+"Tigers","Reds",0
+"Tigers","Indians",0
+"Tigers","Yankees",0
+"Tigers","Senators",0
+"Tigers","Cardinals",1
+"Tigers","Dodgers",0
+"Tigers","Browns",1
+"Tigers","Twins",0
+"Tigers","Orioles",0
+"Tigers","Mets",0
+"Tigers","Brewers",0
+"Tigers","Padres",1
+"Tigers","Royals",0
+"Tigers","Blue Jays",0
+"Tigers","Marlins",0
+"Tigers","Diamondbacks",0
+"Tigers","Astros",0
+"Tigers","Rockies",0
+"Tigers","Rays",0
+"Tigers","Rangers",0
+"Tigers","Angels",0
+"Red Sox","Pirates",0
+"Red Sox","Americans",0
+"Red Sox","Giants",1
+"Red Sox","Athletics",1
+"Red Sox","Cubs",1
+"Red Sox","White Sox",0
+"Red Sox","Tigers",0
+"Red Sox","Red Sox",0
+"Red Sox","Braves",0
+"Red Sox","Phillies",0
+"Red Sox","Robins",1
+"Red Sox","Reds",0
+"Red Sox","Indians",0
+"Red Sox","Yankees",0
+"Red Sox","Senators",0
+"Red Sox","Cardinals",2
+"Red Sox","Dodgers",0
+"Red Sox","Browns",0
+"Red Sox","Twins",0
+"Red Sox","Orioles",0
+"Red Sox","Mets",0
+"Red Sox","Brewers",0
+"Red Sox","Padres",0
+"Red Sox","Royals",0
+"Red Sox","Blue Jays",0
+"Red Sox","Marlins",0
+"Red Sox","Diamondbacks",0
+"Red Sox","Astros",0
+"Red Sox","Rockies",1
+"Red Sox","Rays",0
+"Red Sox","Rangers",0
+"Red Sox","Angels",0
+"Braves","Pirates",0
+"Braves","Americans",0
+"Braves","Giants",0
+"Braves","Athletics",1
+"Braves","Cubs",0
+"Braves","White Sox",0
+"Braves","Tigers",0
+"Braves","Red Sox",0
+"Braves","Braves",0
+"Braves","Phillies",0
+"Braves","Robins",0
+"Braves","Reds",0
+"Braves","Indians",1
+"Braves","Yankees",1
+"Braves","Senators",0
+"Braves","Cardinals",0
+"Braves","Dodgers",0
+"Braves","Browns",0
+"Braves","Twins",0
+"Braves","Orioles",0
+"Braves","Mets",0
+"Braves","Brewers",0
+"Braves","Padres",0
+"Braves","Royals",0
+"Braves","Blue Jays",0
+"Braves","Marlins",0
+"Braves","Diamondbacks",0
+"Braves","Astros",0
+"Braves","Rockies",0
+"Braves","Rays",0
+"Braves","Rangers",0
+"Braves","Angels",0
+"Phillies","Pirates",0
+"Phillies","Americans",0
+"Phillies","Giants",0
+"Phillies","Athletics",0
+"Phillies","Cubs",0
+"Phillies","White Sox",0
+"Phillies","Tigers",0
+"Phillies","Red Sox",0
+"Phillies","Braves",0
+"Phillies","Phillies",0
+"Phillies","Robins",0
+"Phillies","Reds",0
+"Phillies","Indians",0
+"Phillies","Yankees",0
+"Phillies","Senators",0
+"Phillies","Cardinals",0
+"Phillies","Dodgers",0
+"Phillies","Browns",0
+"Phillies","Twins",0
+"Phillies","Orioles",0
+"Phillies","Mets",0
+"Phillies","Brewers",0
+"Phillies","Padres",0
+"Phillies","Royals",1
+"Phillies","Blue Jays",0
+"Phillies","Marlins",0
+"Phillies","Diamondbacks",0
+"Phillies","Astros",0
+"Phillies","Rockies",0
+"Phillies","Rays",1
+"Phillies","Rangers",0
+"Phillies","Angels",0
+"Robins","Pirates",0
+"Robins","Americans",0
+"Robins","Giants",0
+"Robins","Athletics",0
+"Robins","Cubs",0
+"Robins","White Sox",0
+"Robins","Tigers",0
+"Robins","Red Sox",0
+"Robins","Braves",0
+"Robins","Phillies",0
+"Robins","Robins",0
+"Robins","Reds",0
+"Robins","Indians",0
+"Robins","Yankees",0
+"Robins","Senators",0
+"Robins","Cardinals",0
+"Robins","Dodgers",0
+"Robins","Browns",0
+"Robins","Twins",0
+"Robins","Orioles",0
+"Robins","Mets",0
+"Robins","Brewers",0
+"Robins","Padres",0
+"Robins","Royals",0
+"Robins","Blue Jays",0
+"Robins","Marlins",0
+"Robins","Diamondbacks",0
+"Robins","Astros",0
+"Robins","Rockies",0
+"Robins","Rays",0
+"Robins","Rangers",0
+"Robins","Angels",0
+"Reds","Pirates",0
+"Reds","Americans",0
+"Reds","Giants",0
+"Reds","Athletics",1
+"Reds","Cubs",0
+"Reds","White Sox",1
+"Reds","Tigers",1
+"Reds","Red Sox",1
+"Reds","Braves",0
+"Reds","Phillies",0
+"Reds","Robins",0
+"Reds","Reds",0
+"Reds","Indians",0
+"Reds","Yankees",1
+"Reds","Senators",0
+"Reds","Cardinals",0
+"Reds","Dodgers",0
+"Reds","Browns",0
+"Reds","Twins",0
+"Reds","Orioles",0
+"Reds","Mets",0
+"Reds","Brewers",0
+"Reds","Padres",0
+"Reds","Royals",0
+"Reds","Blue Jays",0
+"Reds","Marlins",0
+"Reds","Diamondbacks",0
+"Reds","Astros",0
+"Reds","Rockies",0
+"Reds","Rays",0
+"Reds","Rangers",0
+"Reds","Angels",0
+"Indians","Pirates",0
+"Indians","Americans",0
+"Indians","Giants",0
+"Indians","Athletics",0
+"Indians","Cubs",0
+"Indians","White Sox",0
+"Indians","Tigers",0
+"Indians","Red Sox",0
+"Indians","Braves",1
+"Indians","Phillies",0
+"Indians","Robins",1
+"Indians","Reds",0
+"Indians","Indians",0
+"Indians","Yankees",0
+"Indians","Senators",0
+"Indians","Cardinals",0
+"Indians","Dodgers",0
+"Indians","Browns",0
+"Indians","Twins",0
+"Indians","Orioles",0
+"Indians","Mets",0
+"Indians","Brewers",0
+"Indians","Padres",0
+"Indians","Royals",0
+"Indians","Blue Jays",0
+"Indians","Marlins",0
+"Indians","Diamondbacks",0
+"Indians","Astros",0
+"Indians","Rockies",0
+"Indians","Rays",0
+"Indians","Rangers",0
+"Indians","Angels",0
+"Yankees","Pirates",1
+"Yankees","Americans",0
+"Yankees","Giants",5
+"Yankees","Athletics",0
+"Yankees","Cubs",2
+"Yankees","White Sox",0
+"Yankees","Tigers",0
+"Yankees","Red Sox",0
+"Yankees","Braves",3
+"Yankees","Phillies",2
+"Yankees","Robins",0
+"Yankees","Reds",2
+"Yankees","Indians",0
+"Yankees","Yankees",0
+"Yankees","Senators",0
+"Yankees","Cardinals",2
+"Yankees","Dodgers",8
+"Yankees","Browns",0
+"Yankees","Twins",0
+"Yankees","Orioles",0
+"Yankees","Mets",1
+"Yankees","Brewers",0
+"Yankees","Padres",1
+"Yankees","Royals",0
+"Yankees","Blue Jays",0
+"Yankees","Marlins",0
+"Yankees","Diamondbacks",0
+"Yankees","Astros",0
+"Yankees","Rockies",0
+"Yankees","Rays",0
+"Yankees","Rangers",0
+"Yankees","Angels",0
+"Senators","Pirates",0
+"Senators","Americans",0
+"Senators","Giants",1
+"Senators","Athletics",0
+"Senators","Cubs",0
+"Senators","White Sox",0
+"Senators","Tigers",0
+"Senators","Red Sox",0
+"Senators","Braves",0
+"Senators","Phillies",0
+"Senators","Robins",0
+"Senators","Reds",0
+"Senators","Indians",0
+"Senators","Yankees",0
+"Senators","Senators",0
+"Senators","Cardinals",0
+"Senators","Dodgers",0
+"Senators","Browns",0
+"Senators","Twins",0
+"Senators","Orioles",0
+"Senators","Mets",0
+"Senators","Brewers",0
+"Senators","Padres",0
+"Senators","Royals",0
+"Senators","Blue Jays",0
+"Senators","Marlins",0
+"Senators","Diamondbacks",0
+"Senators","Astros",0
+"Senators","Rockies",0
+"Senators","Rays",0
+"Senators","Rangers",0
+"Senators","Angels",0
+"Cardinals","Pirates",0
+"Cardinals","Americans",0
+"Cardinals","Giants",0
+"Cardinals","Athletics",1
+"Cardinals","Cubs",0
+"Cardinals","White Sox",0
+"Cardinals","Tigers",2
+"Cardinals","Red Sox",2
+"Cardinals","Braves",0
+"Cardinals","Phillies",0
+"Cardinals","Robins",0
+"Cardinals","Reds",0
+"Cardinals","Indians",0
+"Cardinals","Yankees",3
+"Cardinals","Senators",0
+"Cardinals","Cardinals",0
+"Cardinals","Dodgers",0
+"Cardinals","Browns",1
+"Cardinals","Twins",0
+"Cardinals","Orioles",0
+"Cardinals","Mets",0
+"Cardinals","Brewers",1
+"Cardinals","Padres",0
+"Cardinals","Royals",0
+"Cardinals","Blue Jays",0
+"Cardinals","Marlins",0
+"Cardinals","Diamondbacks",0
+"Cardinals","Astros",0
+"Cardinals","Rockies",0
+"Cardinals","Rays",0
+"Cardinals","Rangers",1
+"Cardinals","Angels",0
+"Dodgers","Pirates",0
+"Dodgers","Americans",0
+"Dodgers","Giants",0
+"Dodgers","Athletics",1
+"Dodgers","Cubs",0
+"Dodgers","White Sox",1
+"Dodgers","Tigers",0
+"Dodgers","Red Sox",0
+"Dodgers","Braves",0
+"Dodgers","Phillies",0
+"Dodgers","Robins",0
+"Dodgers","Reds",0
+"Dodgers","Indians",0
+"Dodgers","Yankees",3
+"Dodgers","Senators",0
+"Dodgers","Cardinals",0
+"Dodgers","Dodgers",0
+"Dodgers","Browns",0
+"Dodgers","Twins",1
+"Dodgers","Orioles",0
+"Dodgers","Mets",0
+"Dodgers","Brewers",0
+"Dodgers","Padres",0
+"Dodgers","Royals",0
+"Dodgers","Blue Jays",0
+"Dodgers","Marlins",0
+"Dodgers","Diamondbacks",0
+"Dodgers","Astros",0
+"Dodgers","Rockies",0
+"Dodgers","Rays",0
+"Dodgers","Rangers",0
+"Dodgers","Angels",0
+"Browns","Pirates",0
+"Browns","Americans",0
+"Browns","Giants",0
+"Browns","Athletics",0
+"Browns","Cubs",0
+"Browns","White Sox",0
+"Browns","Tigers",0
+"Browns","Red Sox",0
+"Browns","Braves",0
+"Browns","Phillies",0
+"Browns","Robins",0
+"Browns","Reds",0
+"Browns","Indians",0
+"Browns","Yankees",0
+"Browns","Senators",0
+"Browns","Cardinals",0
+"Browns","Dodgers",0
+"Browns","Browns",0
+"Browns","Twins",0
+"Browns","Orioles",0
+"Browns","Mets",0
+"Browns","Brewers",0
+"Browns","Padres",0
+"Browns","Royals",0
+"Browns","Blue Jays",0
+"Browns","Marlins",0
+"Browns","Diamondbacks",0
+"Browns","Astros",0
+"Browns","Rockies",0
+"Browns","Rays",0
+"Browns","Rangers",0
+"Browns","Angels",0
+"Twins","Pirates",0
+"Twins","Americans",0
+"Twins","Giants",0
+"Twins","Athletics",0
+"Twins","Cubs",0
+"Twins","White Sox",0
+"Twins","Tigers",0
+"Twins","Red Sox",0
+"Twins","Braves",1
+"Twins","Phillies",0
+"Twins","Robins",0
+"Twins","Reds",0
+"Twins","Indians",0
+"Twins","Yankees",0
+"Twins","Senators",0
+"Twins","Cardinals",1
+"Twins","Dodgers",0
+"Twins","Browns",0
+"Twins","Twins",0
+"Twins","Orioles",0
+"Twins","Mets",0
+"Twins","Brewers",0
+"Twins","Padres",0
+"Twins","Royals",0
+"Twins","Blue Jays",0
+"Twins","Marlins",0
+"Twins","Diamondbacks",0
+"Twins","Astros",0
+"Twins","Rockies",0
+"Twins","Rays",0
+"Twins","Rangers",0
+"Twins","Angels",0
+"Orioles","Pirates",0
+"Orioles","Americans",0
+"Orioles","Giants",0
+"Orioles","Athletics",0
+"Orioles","Cubs",0
+"Orioles","White Sox",0
+"Orioles","Tigers",0
+"Orioles","Red Sox",0
+"Orioles","Braves",0
+"Orioles","Phillies",1
+"Orioles","Robins",0
+"Orioles","Reds",1
+"Orioles","Indians",0
+"Orioles","Yankees",0
+"Orioles","Senators",0
+"Orioles","Cardinals",0
+"Orioles","Dodgers",1
+"Orioles","Browns",0
+"Orioles","Twins",0
+"Orioles","Orioles",0
+"Orioles","Mets",0
+"Orioles","Brewers",0
+"Orioles","Padres",0
+"Orioles","Royals",0
+"Orioles","Blue Jays",0
+"Orioles","Marlins",0
+"Orioles","Diamondbacks",0
+"Orioles","Astros",0
+"Orioles","Rockies",0
+"Orioles","Rays",0
+"Orioles","Rangers",0
+"Orioles","Angels",0
+"Mets","Pirates",0
+"Mets","Americans",0
+"Mets","Giants",0
+"Mets","Athletics",0
+"Mets","Cubs",0
+"Mets","White Sox",0
+"Mets","Tigers",0
+"Mets","Red Sox",1
+"Mets","Braves",0
+"Mets","Phillies",0
+"Mets","Robins",0
+"Mets","Reds",0
+"Mets","Indians",0
+"Mets","Yankees",0
+"Mets","Senators",0
+"Mets","Cardinals",0
+"Mets","Dodgers",0
+"Mets","Browns",0
+"Mets","Twins",0
+"Mets","Orioles",1
+"Mets","Mets",0
+"Mets","Brewers",0
+"Mets","Padres",0
+"Mets","Royals",0
+"Mets","Blue Jays",0
+"Mets","Marlins",0
+"Mets","Diamondbacks",0
+"Mets","Astros",0
+"Mets","Rockies",0
+"Mets","Rays",0
+"Mets","Rangers",0
+"Mets","Angels",0
+"Brewers","Pirates",0
+"Brewers","Americans",0
+"Brewers","Giants",0
+"Brewers","Athletics",0
+"Brewers","Cubs",0
+"Brewers","White Sox",0
+"Brewers","Tigers",0
+"Brewers","Red Sox",0
+"Brewers","Braves",0
+"Brewers","Phillies",0
+"Brewers","Robins",0
+"Brewers","Reds",0
+"Brewers","Indians",0
+"Brewers","Yankees",0
+"Brewers","Senators",0
+"Brewers","Cardinals",0
+"Brewers","Dodgers",0
+"Brewers","Browns",0
+"Brewers","Twins",0
+"Brewers","Orioles",0
+"Brewers","Mets",0
+"Brewers","Brewers",0
+"Brewers","Padres",0
+"Brewers","Royals",0
+"Brewers","Blue Jays",0
+"Brewers","Marlins",0
+"Brewers","Diamondbacks",0
+"Brewers","Astros",0
+"Brewers","Rockies",0
+"Brewers","Rays",0
+"Brewers","Rangers",0
+"Brewers","Angels",0
+"Padres","Pirates",0
+"Padres","Americans",0
+"Padres","Giants",0
+"Padres","Athletics",0
+"Padres","Cubs",0
+"Padres","White Sox",0
+"Padres","Tigers",0
+"Padres","Red Sox",0
+"Padres","Braves",0
+"Padres","Phillies",0
+"Padres","Robins",0
+"Padres","Reds",0
+"Padres","Indians",0
+"Padres","Yankees",0
+"Padres","Senators",0
+"Padres","Cardinals",0
+"Padres","Dodgers",0
+"Padres","Browns",0
+"Padres","Twins",0
+"Padres","Orioles",0
+"Padres","Mets",0
+"Padres","Brewers",0
+"Padres","Padres",0
+"Padres","Royals",0
+"Padres","Blue Jays",0
+"Padres","Marlins",0
+"Padres","Diamondbacks",0
+"Padres","Astros",0
+"Padres","Rockies",0
+"Padres","Rays",0
+"Padres","Rangers",0
+"Padres","Angels",0
+"Royals","Pirates",0
+"Royals","Americans",0
+"Royals","Giants",0
+"Royals","Athletics",0
+"Royals","Cubs",0
+"Royals","White Sox",0
+"Royals","Tigers",0
+"Royals","Red Sox",0
+"Royals","Braves",0
+"Royals","Phillies",0
+"Royals","Robins",0
+"Royals","Reds",0
+"Royals","Indians",0
+"Royals","Yankees",0
+"Royals","Senators",0
+"Royals","Cardinals",1
+"Royals","Dodgers",0
+"Royals","Browns",0
+"Royals","Twins",0
+"Royals","Orioles",0
+"Royals","Mets",1
+"Royals","Brewers",0
+"Royals","Padres",0
+"Royals","Royals",0
+"Royals","Blue Jays",0
+"Royals","Marlins",0
+"Royals","Diamondbacks",0
+"Royals","Astros",0
+"Royals","Rockies",0
+"Royals","Rays",0
+"Royals","Rangers",0
+"Royals","Angels",0
+"Blue Jays","Pirates",0
+"Blue Jays","Americans",0
+"Blue Jays","Giants",0
+"Blue Jays","Athletics",0
+"Blue Jays","Cubs",0
+"Blue Jays","White Sox",0
+"Blue Jays","Tigers",0
+"Blue Jays","Red Sox",0
+"Blue Jays","Braves",1
+"Blue Jays","Phillies",1
+"Blue Jays","Robins",0
+"Blue Jays","Reds",0
+"Blue Jays","Indians",0
+"Blue Jays","Yankees",0
+"Blue Jays","Senators",0
+"Blue Jays","Cardinals",0
+"Blue Jays","Dodgers",0
+"Blue Jays","Browns",0
+"Blue Jays","Twins",0
+"Blue Jays","Orioles",0
+"Blue Jays","Mets",0
+"Blue Jays","Brewers",0
+"Blue Jays","Padres",0
+"Blue Jays","Royals",0
+"Blue Jays","Blue Jays",0
+"Blue Jays","Marlins",0
+"Blue Jays","Diamondbacks",0
+"Blue Jays","Astros",0
+"Blue Jays","Rockies",0
+"Blue Jays","Rays",0
+"Blue Jays","Rangers",0
+"Blue Jays","Angels",0
+"Marlins","Pirates",0
+"Marlins","Americans",0
+"Marlins","Giants",0
+"Marlins","Athletics",0
+"Marlins","Cubs",0
+"Marlins","White Sox",0
+"Marlins","Tigers",0
+"Marlins","Red Sox",0
+"Marlins","Braves",0
+"Marlins","Phillies",0
+"Marlins","Robins",0
+"Marlins","Reds",0
+"Marlins","Indians",1
+"Marlins","Yankees",1
+"Marlins","Senators",0
+"Marlins","Cardinals",0
+"Marlins","Dodgers",0
+"Marlins","Browns",0
+"Marlins","Twins",0
+"Marlins","Orioles",0
+"Marlins","Mets",0
+"Marlins","Brewers",0
+"Marlins","Padres",0
+"Marlins","Royals",0
+"Marlins","Blue Jays",0
+"Marlins","Marlins",0
+"Marlins","Diamondbacks",0
+"Marlins","Astros",0
+"Marlins","Rockies",0
+"Marlins","Rays",0
+"Marlins","Rangers",0
+"Marlins","Angels",0
+"Diamondbacks","Pirates",0
+"Diamondbacks","Americans",0
+"Diamondbacks","Giants",0
+"Diamondbacks","Athletics",0
+"Diamondbacks","Cubs",0
+"Diamondbacks","White Sox",0
+"Diamondbacks","Tigers",0
+"Diamondbacks","Red Sox",0
+"Diamondbacks","Braves",0
+"Diamondbacks","Phillies",0
+"Diamondbacks","Robins",0
+"Diamondbacks","Reds",0
+"Diamondbacks","Indians",0
+"Diamondbacks","Yankees",1
+"Diamondbacks","Senators",0
+"Diamondbacks","Cardinals",0
+"Diamondbacks","Dodgers",0
+"Diamondbacks","Browns",0
+"Diamondbacks","Twins",0
+"Diamondbacks","Orioles",0
+"Diamondbacks","Mets",0
+"Diamondbacks","Brewers",0
+"Diamondbacks","Padres",0
+"Diamondbacks","Royals",0
+"Diamondbacks","Blue Jays",0
+"Diamondbacks","Marlins",0
+"Diamondbacks","Diamondbacks",0
+"Diamondbacks","Astros",0
+"Diamondbacks","Rockies",0
+"Diamondbacks","Rays",0
+"Diamondbacks","Rangers",0
+"Diamondbacks","Angels",0
+"Astros","Pirates",0
+"Astros","Americans",0
+"Astros","Giants",0
+"Astros","Athletics",0
+"Astros","Cubs",0
+"Astros","White Sox",0
+"Astros","Tigers",0
+"Astros","Red Sox",0
+"Astros","Braves",0
+"Astros","Phillies",0
+"Astros","Robins",0
+"Astros","Reds",0
+"Astros","Indians",0
+"Astros","Yankees",0
+"Astros","Senators",0
+"Astros","Cardinals",0
+"Astros","Dodgers",0
+"Astros","Browns",0
+"Astros","Twins",0
+"Astros","Orioles",0
+"Astros","Mets",0
+"Astros","Brewers",0
+"Astros","Padres",0
+"Astros","Royals",0
+"Astros","Blue Jays",0
+"Astros","Marlins",0
+"Astros","Diamondbacks",0
+"Astros","Astros",0
+"Astros","Rockies",0
+"Astros","Rays",0
+"Astros","Rangers",0
+"Astros","Angels",0
+"Rockies","Pirates",0
+"Rockies","Americans",0
+"Rockies","Giants",0
+"Rockies","Athletics",0
+"Rockies","Cubs",0
+"Rockies","White Sox",0
+"Rockies","Tigers",0
+"Rockies","Red Sox",0
+"Rockies","Braves",0
+"Rockies","Phillies",0
+"Rockies","Robins",0
+"Rockies","Reds",0
+"Rockies","Indians",0
+"Rockies","Yankees",0
+"Rockies","Senators",0
+"Rockies","Cardinals",0
+"Rockies","Dodgers",0
+"Rockies","Browns",0
+"Rockies","Twins",0
+"Rockies","Orioles",0
+"Rockies","Mets",0
+"Rockies","Brewers",0
+"Rockies","Padres",0
+"Rockies","Royals",0
+"Rockies","Blue Jays",0
+"Rockies","Marlins",0
+"Rockies","Diamondbacks",0
+"Rockies","Astros",0
+"Rockies","Rockies",0
+"Rockies","Rays",0
+"Rockies","Rangers",0
+"Rockies","Angels",0
+"Rays","Pirates",0
+"Rays","Americans",0
+"Rays","Giants",0
+"Rays","Athletics",0
+"Rays","Cubs",0
+"Rays","White Sox",0
+"Rays","Tigers",0
+"Rays","Red Sox",0
+"Rays","Braves",0
+"Rays","Phillies",0
+"Rays","Robins",0
+"Rays","Reds",0
+"Rays","Indians",0
+"Rays","Yankees",0
+"Rays","Senators",0
+"Rays","Cardinals",0
+"Rays","Dodgers",0
+"Rays","Browns",0
+"Rays","Twins",0
+"Rays","Orioles",0
+"Rays","Mets",0
+"Rays","Brewers",0
+"Rays","Padres",0
+"Rays","Royals",0
+"Rays","Blue Jays",0
+"Rays","Marlins",0
+"Rays","Diamondbacks",0
+"Rays","Astros",0
+"Rays","Rockies",0
+"Rays","Rays",0
+"Rays","Rangers",0
+"Rays","Angels",0
+"Rangers","Pirates",0
+"Rangers","Americans",0
+"Rangers","Giants",0
+"Rangers","Athletics",0
+"Rangers","Cubs",0
+"Rangers","White Sox",0
+"Rangers","Tigers",0
+"Rangers","Red Sox",0
+"Rangers","Braves",0
+"Rangers","Phillies",0
+"Rangers","Robins",0
+"Rangers","Reds",0
+"Rangers","Indians",0
+"Rangers","Yankees",0
+"Rangers","Senators",0
+"Rangers","Cardinals",0
+"Rangers","Dodgers",0
+"Rangers","Browns",0
+"Rangers","Twins",0
+"Rangers","Orioles",0
+"Rangers","Mets",0
+"Rangers","Brewers",0
+"Rangers","Padres",0
+"Rangers","Royals",0
+"Rangers","Blue Jays",0
+"Rangers","Marlins",0
+"Rangers","Diamondbacks",0
+"Rangers","Astros",0
+"Rangers","Rockies",0
+"Rangers","Rays",0
+"Rangers","Rangers",0
+"Rangers","Angels",0
+"Angels","Pirates",0
+"Angels","Americans",0
+"Angels","Giants",1
+"Angels","Athletics",0
+"Angels","Cubs",0
+"Angels","White Sox",0
+"Angels","Tigers",0
+"Angels","Red Sox",0
+"Angels","Braves",0
+"Angels","Phillies",0
+"Angels","Robins",0
+"Angels","Reds",0
+"Angels","Indians",0
+"Angels","Yankees",0
+"Angels","Senators",0
+"Angels","Cardinals",0
+"Angels","Dodgers",0
+"Angels","Browns",0
+"Angels","Twins",0
+"Angels","Orioles",0
+"Angels","Mets",0
+"Angels","Brewers",0
+"Angels","Padres",0
+"Angels","Royals",0
+"Angels","Blue Jays",0
+"Angels","Marlins",0
+"Angels","Diamondbacks",0
+"Angels","Astros",0
+"Angels","Rockies",0
+"Angels","Rays",0
+"Angels","Rangers",0
+"Angels","Angels",0
