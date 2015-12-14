@@ -2,7 +2,7 @@ $(document).on('page:change', function(){
   //*******************************************************************
   //  CREATE MATRIX AND MAP
   //*******************************************************************
-  d3.csv('/assets/world_series.csv', function (error, data) { 
+  d3.csv('assets/javascripts/world_series.csv', function (error, data) { 
     var mpr = chordMpr(data);
     mpr
       .addValuesToMap('has')
