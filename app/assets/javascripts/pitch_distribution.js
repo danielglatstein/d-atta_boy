@@ -95,6 +95,7 @@ function graphPitches(data, pauseTime) {
 };
 
 function buildPitchTypeList(uncheckedPitches) {
+  $('.pitch_type_counts').remove()
   pitchTypes = ["FA", "FF", "FT", "FC", "FS", "SL", "CH", "KC", "KN", "EP", "SI", "CU", "CB"];
   // pitchTranslationHash = {
   //   "FA": "Fast Ball",
