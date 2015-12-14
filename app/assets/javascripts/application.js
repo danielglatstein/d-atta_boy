@@ -4,7 +4,7 @@
 //= require turbolinks
 //= require underscore
 //= require mapper
-//= require world_series.js
+//= require world_series
 //= require pitch_sequence
 //= require players/matchups
 //= require pitch_distribution
