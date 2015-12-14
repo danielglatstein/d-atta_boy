@@ -2,8 +2,10 @@ class PitchesController < ApplicationController
   before_action :set_pitch, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pitcher = Player.find_by(player_id: params[:pitcher_id])
-    @pitches = @pitcher.pitches
+    if params[:pitcher_id]
+      @pitcher = Player.find_by(player_id: params[:pitcher_id])
+      @pitches = @pitcher.pitches
+    end
     
     respond_to do |format|
       format.html
