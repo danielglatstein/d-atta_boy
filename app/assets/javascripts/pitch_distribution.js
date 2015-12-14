@@ -1,6 +1,5 @@
-$(function(){
+$(document).on('page:change', function(){
   graphPitchesListener();
-  pitchTypeListListener()
   checkBoxListener();
 });
 
@@ -19,6 +18,10 @@ function graphPitchesListener() {
           error: function() {
             debugger
           }
+    });
+    $("input[type='checkbox']").attr("checked", false);
+    $("").on("click", function() {
+      $("." + $(this).attr("class")).toggle();
     });
   });
 }
@@ -190,16 +193,6 @@ function buildPitchTypeList(uncheckedPitches) {
         $.each($($("td")), function(index, value) {
           $(value).attr("class", $(value).text());
         });
-}
-
-function pitchTypeListListener() {
-  $("#pitchers").on("change", function() {
-    $("input[type='checkbox']").attr("checked", false);
-    buildPitchTypeList();
-  });
-  $("").on("click", function() {
-    $("." + $(this).attr("class")).toggle();
-  });
 }
 
 function checkBoxListener() {
